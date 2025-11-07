@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-11-07 09:39:18 / 修改时间：21:52:14" itemprop="dateCreated datePublished" datetime="2025-11-07T09:39:18+08:00">2025-11-07</time>
+              <time title="创建时间：2025-11-07 09:39:18 / 修改时间：22:35:09" itemprop="dateCreated datePublished" datetime="2025-11-07T09:39:18+08:00">2025-11-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -204,6 +204,8 @@
 <li>复合命题：由简单命题和逻辑运算符组成的命题。</li>
 <li>命题联结词：也叫逻辑运算符，包括与、或、非、条件、双向条件等</li>
 </ul>
+<p>命题常项：在命题逻辑中，具有固定逻辑含义的部分，通常由逻辑联结词构成，如“与”( $\wedge$ )、“或”( $\vee$ )、“非”( $\lnot$ )等。这些常项在命题中不随具体内容的变化而变化，决定了命题的逻辑性质和结构。例如，在命题“如果P，则Q”（P→Q）中，“→”就是一个逻辑常项，它表示蕴含关系，始终保持相同的逻辑含义。<br><br>
+命题变项：在命题中可以变化的部分，通常用字母（如p、q、r等）表示。变项的值是未定的，可以根据具体情况进行替换。例如，在命题“天在下雨→地是湿的”中，“天在下雨”和“地是湿的”都是命题变项，它们的具体内容可以根据实际情况而变化。</p>
 <h2 id="逻辑等价">逻辑等价</h2>
 <p>p $\equiv$ q</p>
 <img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image.png" width="400" height="250" align="center">
@@ -220,20 +222,26 @@ p $\Rightarrow$ q，p是推理前提，q是推理结论</p>
 <li>析取范式与合取范式统称为范式</li>
 <li>任一命题公式都存在着与之等值的析取范式与合取范式</li>
 </ul>
+<blockquote>
 <p><em>例：</em></p>
-<p>P ，$\lnot$ q既是一个简单析取式，又是一个简单合取式<br>
-p $\vee$ $\lnot$ q , p $\vee$ r 均是有两个文字的简单析取式<br>
-p $\wedge$ q $\wedge$ r , $\lnot$ p $\wedge$ q $\wedge$ $\lnot$ q 均是有三个文字的简单合取式</p>
-<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-3.png" width="500" height="250" align="center">
-<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-4.png" width="400" height="250" align="center">
+<ul>
+<li>P ，$\lnot$ q既是一个简单析取式，又是一个简单合取式</li>
+<li>p $\vee$ $\lnot$ q , p $\vee$ r 均是有两个简单合取式的析取范式，也是只有一个简单析取式的合取范式</li>
+<li>p $\vee$ ( q $\wedge$  $\lnot$ r ) $\vee$ r 是有三个简单合取式的析取范式<br>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-3.png" width="400" height="250" align="center"></li>
+</ul>
+</blockquote>
 <h1>谓词逻辑</h1>
 <p>命题逻辑的局限性：在命题逻辑中，每个陈述句是最基本的单位（即原子命题），无法对原子命题进行分解。因此在命题逻辑中，不能表达<strong>局部与整体、一般与个别</strong>的关系。</p>
-<p>（如苏格拉底论断<br>
-$\alpha$ ：所有人总是要死的；<br>
-$\beta$ ：苏格拉底是人；<br>
-$\gamma$ ：苏格拉底是要死的；<br>
-无法在命题逻辑的基础上完成 $\alpha$ $\wedge$ $\beta$ $\rightarrow$ $\gamma$的推导<br>
-）</p>
+<blockquote>
+<p>（如苏格拉底论断</p>
+<ul>
+<li>$\alpha$ ：所有人总是要死的；</li>
+<li>$\beta$ ：苏格拉底是人；</li>
+<li>$\gamma$ ：苏格拉底是要死的；<br><br>
+无法在命题逻辑的基础上完成 $\alpha$ $\wedge$ $\beta$ $\rightarrow$ $\gamma$ 的推导）</li>
+</ul>
+</blockquote>
 <h2 id="谓词逻辑核心概念">谓词逻辑核心概念</h2>
 <p>个体：所研究领域中可以独立存在的具体或抽象的概念</p>
 <ul>
@@ -270,22 +278,63 @@ $\gamma$ ：苏格拉底是要死的；<br>
 <li>自由变元：不受全称量词或存在量词约束的变量符号称为自由变元，如中的x</li>
 <li>
 <ul>
-<li>自由变元既可以存在于量词的约束范围之内，也可以存在于量词的约束范围之外<br>
-设A(x)是包含变元x的公式，B是不包含变元x的谓词公式，则如下逻辑等价关系成立：<br>
-<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-5.png" width="400" height="250" align="center"></li>
+<li>自由变元既可以存在于量词的约束范围之内，也可以存在于量词的约束范围之外</li>
 </ul>
 </li>
 <li>
 <ul>
-<li>在约束变元相同的情况下，量词的运算满足分配律<br>
-设A(x)、B(x)是包含变元x的谓词公式，则如下逻辑等价关系成立：<br>
-<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-6.png" width="400" height="250" align="center"><br>
-<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-7.png" width="800" height="250" align="center"></li>
+<li>在约束变元相同的情况下，量词的运算满足分配律</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>当公式中存在多个量词时，若多个量词都是全称量词或者都是存在量词，则量词的位置可以互换；<br>
+若多个量词中既有全称量词又有存在量词，则量词的位置不可以随意互换。</li>
 </ul>
 </li>
 </ul>
+<h2 id="谓词逻辑推理规则">谓词逻辑推理规则</h2>
+<p>设A(x)是谓词公式，x和y是变元，c是常量符号，则存在如下规则：</p>
+<ul>
+<li>全称量词消去：$\forall$ xA(x) $\rightarrow$ A(y)</li>
+<li>全称量词引入：A(y) $\rightarrow$ $\forall$ xA(x)</li>
+<li>存在量词消去：$\exists$ xA(x) $\rightarrow$ A©</li>
+<li>存在量词引入：A© $\rightarrow$ $\exists$ xA(x)</li>
+</ul>
+<h2 id="项与原子谓词公式">项与原子谓词公式</h2>
+<p>项是描述对象的逻辑表达式，被递归地定义为：</p>
+<ol>
+<li>常量符号和变量符号是项；</li>
+<li>若 f( x1, x2, …, xn ) 是 n 元函数符号，t1, t2, …, tn 是项，则 f( t1, t2, …, tn )是项；</li>
+<li>有限次数地使用上述规则产生的符号串是项。</li>
+</ol>
+<p>原子谓词公式：若 P( x1 , x2, …, xn ) 是 n 元谓词，t1, t2 , …, tn 是项，则称 P( t1, t2, …, tn ) 是原子谓词公式，简称<strong>原子公式</strong>。</p>
+<p>合式公式：由逻辑联结词和原子公式构成的用于陈述事实的复杂语句，又称谓词公式，由以下规则定义：</p>
+<ol>
+<li>命题常项、命题变项、原子谓词公式是合式公式；</li>
+<li>如果 A 是合式公式，则 $\lnot$ A 也是合式公式；</li>
+<li>如果 A 和 B 是合式公式，则 A $\vee$ B 、A $\wedge$ B 、A $\rightarrow$ B、B $\rightarrow$ A、A $\leftrightarrow$ B 都是合式公式</li>
+<li>如果 A 是合式公式，x 是个体变项，则 $\forall$ x 和 $\exists$ x 也是合式公式；</li>
+<li>有限次数地使用上述规则构成的表达式是合式公式。</li>
+</ol>
 <h1>知识图谱推理</h1>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/batianhan/p/15576496.html">知识图谱推理FOIL</a></p>
+<p>FOIL算法概述: 从一般到特殊, 逐步给目标谓词添加前提约束谓词, 直到所构成的推理规则不覆盖任何反例<br>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-4.png" width="400" height="150" align="center"></p>
 <h1>因果推理</h1>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111340526">因果推理初探</a></p>
+<h2 id="结构因果模型-SCM">结构因果模型(SCM)</h2>
+<ul>
+<li>组成：两组变量集合U和V以及一组函数f。其中，U中的变量被称为<strong>外生变量</strong>,即这些变量处于模型之外，不对其阐述和解释；V中的变量称为<strong>内生变量</strong>；f是根据模型中其他变量取值而给V中每一个变量赋值的<strong>函数</strong>。</li>
+<li>如果变量X出现在给变量Y赋值的函数中，则X是Y的<strong>直接原因</strong>。如果X是Y的直接原因或者其他原因，均称X是Y的原因</li>
+</ul>
+<h2 id="因果图">因果图</h2>
+<ul>
+<li>组成：一般而言，因果图是有向无环图(DAG)。DAG刻画了图中所有节点之间的依赖关系，可用于描述数据的生成机制。这样描述变量联合分布或者数据生成机制的模型，被称为“贝叶斯网络”。</li>
+<li>若变量Y是另一个变量X的孩子，则X是Y的<strong>直接原因</strong>；若Y是X的后代，则X是Y的<strong>潜在原因</strong>。</li>
+</ul>
+<p><strong>每个结构因果模型M都与一个因果图G相对应</strong>：因果图中的节点是结构因果模型中U和V所包括的变量，节点之间的边表示函数f。在M中，若变量X的函数fx包含了变量Y，则在G中有一条从Y到X的有向边。</p>
+<p>以图中的节点来说明内生变量和外生变量的关系：每一个内生变量都至少是一个外生变量的后代；而每一个外生变量都不是其他外生或内生变量的后代，它们没有祖先，也就是说，<strong>外生变量都是图中的根节点</strong>。如果知道了每一个外生变量的值，就可以使用函数f来计算出每一个内生变量的值。</p>
 
       
     </div>
