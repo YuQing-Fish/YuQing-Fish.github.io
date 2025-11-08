@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-1.png">
 <meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-2.png">
 <meta property="article:published_time" content="2025-11-07T01:39:18.000Z">
-<meta property="article:modified_time" content="2025-11-08T02:50:47.467Z">
+<meta property="article:modified_time" content="2025-11-08T02:56:07.071Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image.png">
@@ -184,7 +184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-08 10:50:47" itemprop="dateModified" datetime="2025-11-08T10:50:47+08:00">2025-11-08</time>
+                <time title="修改时间：2025-11-08 10:56:07" itemprop="dateModified" datetime="2025-11-08T10:56:07+08:00">2025-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,13 +252,11 @@ $p \Rightarrow q$ ，$p$ 是推理前提，$q$ 是推理结论</p>
 <h1>谓词逻辑</h1>
 <p>命题逻辑的局限性：在命题逻辑中，每个陈述句是最基本的单位（即原子命题），无法对原子命题进行分解。因此在命题逻辑中，不能表达<strong>局部与整体、一般与个别</strong>的关系。</p>
 <blockquote>
-<p>（如苏格拉底论断</p>
-<ul>
-<li>$\alpha$ ：所有人总是要死的；</li>
-<li>$\beta$ ：苏格拉底是人；</li>
-<li>$\gamma$ ：苏格拉底是要死的；<br><br>
-无法在命题逻辑的基础上完成 $\alpha \wedge \beta \rightarrow \gamma$ 的推导）</li>
-</ul>
+<p>（如苏格拉底论断<br>
+$\alpha$ ：所有人总是要死的；<br>
+$\beta$ ：苏格拉底是人；<br>
+$\gamma$ ：苏格拉底是要死的；<br><br>
+无法在命题逻辑的基础上完成 $\alpha \wedge \beta \rightarrow \gamma$ 的推导）</p>
 </blockquote>
 <h2 id="谓词逻辑核心概念">谓词逻辑核心概念</h2>
 <p>个体：所研究领域中可以独立存在的具体或抽象的概念</p>
@@ -321,8 +319,8 @@ $p \Rightarrow q$ ，$p$ 是推理前提，$q$ 是推理结论</p>
 <ul>
 <li>全称量词消去：$\forall xA(x) \rightarrow A(y)$</li>
 <li>全称量词引入：$A(y) \rightarrow \forall xA(x)$</li>
-<li>存在量词消去：$\exists xA(x) \rightarrow A©$</li>
-<li>存在量词引入：$A© \rightarrow \exists xA(x)$</li>
+<li>存在量词消去：$\exists xA(x) \rightarrow A\left(c\right)$</li>
+<li>存在量词引入：$A\left(c\right) \rightarrow \exists xA(x)$</li>
 </ul>
 <h2 id="项与原子谓词公式">项与原子谓词公式</h2>
 <p>项是描述对象的逻辑表达式，被递归地定义为：</p>
@@ -362,6 +360,8 @@ $p \Rightarrow q$ ，$p$ 是推理前提，$q$ 是推理结论</p>
 <p>对于任意的有向无环图模型，模型中 $d$ 个变量的联合概率分布由每个节点与其父节点之间条件概率 $P(child|parents)$ 的乘积给出：<br>
 $$P(x_1,x_2,…,x_d)=\prod_{j=1}^{d}{P(x_j|{x_{pa(j)}})}$$<br>
 其中，$x_{pa(j)}$ 表示节点 $x_j$ 的父节点集合（所有指向 $x_j$ 的节点）。这里包含了变量之间某种普遍成立的独立性假设。</p>
+<p>对于一个简单的链式图，其联合概率分布可直接写成：</p>
+<p>例：</p>
 <h2 id="因果图基本结构">因果图基本结构</h2>
 <h3 id="链结构">链结构</h3>
 <h3 id="分连结构">分连结构</h3>
