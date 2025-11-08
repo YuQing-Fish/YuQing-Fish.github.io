@@ -147,6 +147,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/11/08/%E6%90%9C%E7%B4%A2%E6%B1%82%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fish">
+      <meta itemprop="description" content="大胜利！！！！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼塘">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/11/08/%E6%90%9C%E7%B4%A2%E6%B1%82%E8%A7%A3/" class="post-title-link" itemprop="url">搜索求解</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-08 21:24:42 / 修改时间：22:06:21" itemprop="dateCreated datePublished" datetime="2025-11-08T21:24:42+08:00">2025-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">人工智能引论</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>启发式搜索</h1>
+<p>启发式搜索算法，就是在状态空间中先对每一条搜索分支进行<strong>评估</strong>，得到最好的分支，再从这个分支继续搜索从而到达目标，这样可以有效省略大量无谓的搜索路径，大大提高了搜索效率。</p>
+<ul>
+<li>$f(n)$：评价函数，从结点 $n$ 出发选择后续结点的依据</li>
+<li>$h(n)$：启发函数，从结点 $n$ 到目标节点的最佳路径的估计代价</li>
+<li>$g(n)$：代价函数，表示从起始点到结点 $n$ 的代价值</li>
+</ul>
+<h2 id="贪婪最佳优先搜索（GBFS）">贪婪最佳优先搜索（GBFS）</h2>
+<p>$$f(n)=h(n)$$<br>
+这里将两点之间的直线距离作为启发函数， 完全依据结点 $n$ 到目标结点的距离来选择后续结点，每次都是向最靠近目标的结点靠近。</p>
+<p>GBFS的不完备性：它可能沿着一条无限的路径走下去而不回来做其他的选择尝试，导致无法找到最佳路径</p>
+<h2 id="A-算法">$A^*$算法</h2>
+<p>A算法：令 $f(n)=g(n)+h(n)$ 。（这里的 $h(n)$ 没有限制）。<br>
+$f(n)$ 可视为经过节点n ，具有最小开销代价值的路径。<br>
+虽然提高了算法效率，但是不能保证找到最优解，不适合的 $h(n)$ 定义会导致算法找不到解。不具有完备性和最优性。</p>
+<p>$A^<em>$ 算法对 $A$ 算法进行了小小的修改。并证明了当启发函数 $h(n)$ 满足一定条件，算法一定能找到最优解。<br>
+为保证 $A^</em>$ 算法最优， $h(n)$ 需满足：</p>
+<ol>
+<li>可容：不会过高估计从结点 $n$ 到目标结点之间的实际开销代价，即 $h(n)$ 的值不大于 $n$ 到目标的实际代价 $h^*(x)$</li>
+<li>一致性：假设节点n的后续节点是 $n’$ ，则从 $n$ 到目标节点之间的开销代价一定小于从 $n$ 到 $n’$ 的开销再加上从 $n’$ 到目标节点之间的开销，即 $h(n)\leq v(n,n’)+h(n’)$</li>
+</ol>
+<h1>对抗搜索（博弈搜索）</h1>
+<p>状态 $player(s)$ 状态 $s$ 下行动的智能体<br>
+动作 $actions(s)$ $player(s)$ 在当前局面可以采取的操作<br>
+状态转移 $result(s,a)$ 决定在 $s$ 状态采取动作后所得后继状态<br>
+终局状态检测 $terminal_test(s)$ 测试游戏是否在状态 $s$ 结束<br>
+终局得分 $utility(s,p)$ 终局状态 $s$ 时玩家 $p$ 的得分</p>
+<h2 id="最小最大搜索（Minimax-Search）">最小最大搜索（Minimax Search）</h2>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42165981/article/details/103263211">$Minimax$ 算法图解</a></p>
+<p>决策过程：最大化己方收益，同时假设对手会最小化己方收益。<br>
+$Minimax$ 算法是Pessimistic（悲观）的，总是觉得对手agent拥有完美的决策能力，所以每次决策时，希望<strong>找到对方让我方陷入最坏情况的各种策略中的较好的策略</strong>。</p>
+<h3 id="操作">操作</h3>
+<ul>
+<li>通过对游戏树进行一次完整的深度优先搜索，<strong>自底向上</strong>地计算每个节点的值</li>
+<li>在 $MAX$ 层，节点的值等于其所有子节点中的最大值。</li>
+<li>在 $MIN$ 层，节点的值等于其所有子节点中的最小值。</li>
+<li>最终，根节点（当前局面）的下一层节点会各自有一个 $Minimax$ 值， $MAX$ 玩家选择那个值最大的走法即可。</li>
+</ul>
+<p>优点：在对手尽力而为的前提下，算法可返回最优结果<br>
+缺点：如果搜索树极大，则无法在有效时间内返回结果<br>
+改善：使用<strong>剪枝</strong>算法来减少搜索结点对结点进行采样、而非逐一搜索</p>
+<h2 id="Alpha-Beta剪枝">Alpha-Beta剪枝</h2>
+<p><a target="_blank" rel="noopener" href="https://oi-wiki.org/search/alpha-beta/">$Alpha-Beta$ 算法图解</a></p>
+<p>$Alpha-Beta$ 剪枝是 $Minimax$ 算法最核心的优化，能够在不影响最终结果的前提下，安全地剪掉大量无需探索的博弈分支。</p>
+<p>$\alpha=$目前所有可能解中的最大下界<br>
+$\beta=$目前所有可能解中的最小上界</p>
+<h3 id="操作-2">操作</h3>
+<h1>蒙特卡洛树搜索（MCTS）</h1>
+<h3 id="原理">原理</h3>
+<h3 id="操作-3">操作</h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/11/07/%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -255,7 +372,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-08 21:22:23" itemprop="dateModified" datetime="2025-11-08T21:22:23+08:00">2025-11-08</time>
+                <time title="修改时间：2025-11-08 21:24:08" itemprop="dateModified" datetime="2025-11-08T21:24:08+08:00">2025-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -476,7 +593,7 @@ $$P(Y=1|do(X=1))-P(Y=1|do(X=0))$$<br>
 <p>显然因果效应 <strong>$P(Y=y|do(X=x))=P_m(Y=y|do(X=x))$</strong><br>
 又因为<br>
 (1) 边缘概率 $P(Z=z)$ 不随干预变化，即 <strong>$P_m(Z=z)=P(Z=z)$</strong><br>
-(2)条件概率 $P(Y=y|X=x,Z=z)$ 不变，即 <strong>$P_m(Y=y|X=x,Z=z)=P(Y=y|X=x,Z=z)$</strong><br>
+(2) 条件概率 $P(Y=y|X=x,Z=z)$ 不变，即 <strong>$P_m(Y=y|X=x,Z=z)=P(Y=y|X=x,Z=z)$</strong><br>
 于是得到$$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,Z=z)P(Z=z)$$<br>
 最终得到的这个公式就叫做<strong>调整公式</strong>，这个运算过程也叫作<strong>Z调整</strong>或者Z控制</p>
 <p>调整公式的等号右边全部都是干预操作之前的概率分布，即我们可以<strong>用观测数据来进行干预</strong>。<br>
@@ -486,7 +603,7 @@ $$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,PA=z)P(PA=z)$$</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/120909701">因果推理初探——反事实</a></p>
 <h3 id="反事实">反事实</h3>
 <p>反事实是因果关系的最高层级，涉及对已发生事件的假设性推断。它关注的是如果某个事件没有发生，结果会如何变化	。反事实推理通常需要复杂的模型和假设，无法通过直接实验来验证。</p>
-<p>干预计算的是概率分布，它的计算结果是一个概率；<br><br>
+<p>干预计算的是概率分布，它的计算结果是一个概率；<br>
 而反事实计算的是在假设下 $Y$ 的取值，它的计算结果是一个值。</p>
 <p>反事实语句“在 $U=u$ 的情况下，若 $X$ 取值 $x$ ，则 $Y$ 取值 $y$ ”可表示为 $Y_x(u)$ ，其中 $Y$ 和 $X$ 是 $V$ 中的两个变量。</p>
 <h3 id="计算步骤">计算步骤</h3>
@@ -576,7 +693,7 @@ $$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,PA=z)P(PA=z)$$</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
