@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-11-08 21:24:42 / 修改时间：22:06:21" itemprop="dateCreated datePublished" datetime="2025-11-08T21:24:42+08:00">2025-11-08</time>
+              <time title="创建时间：2025-11-08 21:24:42 / 修改时间：22:22:05" itemprop="dateCreated datePublished" datetime="2025-11-08T21:24:42+08:00">2025-11-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,21 +207,23 @@
 这里将两点之间的直线距离作为启发函数， 完全依据结点 $n$ 到目标结点的距离来选择后续结点，每次都是向最靠近目标的结点靠近。</p>
 <p>GBFS的不完备性：它可能沿着一条无限的路径走下去而不回来做其他的选择尝试，导致无法找到最佳路径</p>
 <h2 id="A-算法">$A^*$算法</h2>
-<p>A算法：令 $f(n)=g(n)+h(n)$ 。（这里的 $h(n)$ 没有限制）。<br>
-$f(n)$ 可视为经过节点n ，具有最小开销代价值的路径。<br>
+<p>$A$ 算法：令 $f(n)=g(n)+h(n)$ 。（这里的 $h(n)$ 没有限制）<br><br>
+$f(n)$ 可视为经过节点n ，具有最小开销代价值的路径。<br><br>
 虽然提高了算法效率，但是不能保证找到最优解，不适合的 $h(n)$ 定义会导致算法找不到解。不具有完备性和最优性。</p>
-<p>$A^<em>$ 算法对 $A$ 算法进行了小小的修改。并证明了当启发函数 $h(n)$ 满足一定条件，算法一定能找到最优解。<br>
-为保证 $A^</em>$ 算法最优， $h(n)$ 需满足：</p>
+<p>$A$* 算法对 $A$ 算法进行了小小的修改。并证明了当启发函数 $h(n)$ 满足一定条件，算法一定能找到最优解。<br>
+为保证 $A$* 算法最优， $h(n)$ 需满足：</p>
 <ol>
-<li>可容：不会过高估计从结点 $n$ 到目标结点之间的实际开销代价，即 $h(n)$ 的值不大于 $n$ 到目标的实际代价 $h^*(x)$</li>
+<li>可容：不会过高估计从结点 $n$ 到目标结点之间的实际开销代价，即 $h(n)$ 的值不大于 $n$ 到目标的实际代价 $h$*$(x)$</li>
 <li>一致性：假设节点n的后续节点是 $n’$ ，则从 $n$ 到目标节点之间的开销代价一定小于从 $n$ 到 $n’$ 的开销再加上从 $n’$ 到目标节点之间的开销，即 $h(n)\leq v(n,n’)+h(n’)$</li>
 </ol>
 <h1>对抗搜索（博弈搜索）</h1>
-<p>状态 $player(s)$ 状态 $s$ 下行动的智能体<br>
-动作 $actions(s)$ $player(s)$ 在当前局面可以采取的操作<br>
-状态转移 $result(s,a)$ 决定在 $s$ 状态采取动作后所得后继状态<br>
-终局状态检测 $terminal_test(s)$ 测试游戏是否在状态 $s$ 结束<br>
-终局得分 $utility(s,p)$ 终局状态 $s$ 时玩家 $p$ 的得分</p>
+<ul>
+<li>状态 $player(s)$ 状态 $s$ 下行动的智能体</li>
+<li>动作 $actions(s)$ $player(s)$ 在当前局面可以采取的操作</li>
+<li>状态转移 $result(s,a)$ 决定在 $s$ 状态采取动作后所得后继状态</li>
+<li>终局状态检测 $terminal_test(s)$ 测试游戏是否在状态 $s$ 结束</li>
+<li>终局得分 $utility(s,p)$ 终局状态 $s$ 时玩家 $p$ 的得分</li>
+</ul>
 <h2 id="最小最大搜索（Minimax-Search）">最小最大搜索（Minimax Search）</h2>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42165981/article/details/103263211">$Minimax$ 算法图解</a></p>
 <p>决策过程：最大化己方收益，同时假设对手会最小化己方收益。<br>
@@ -239,7 +241,7 @@ $Minimax$ 算法是Pessimistic（悲观）的，总是觉得对手agent拥有完
 <h2 id="Alpha-Beta剪枝">Alpha-Beta剪枝</h2>
 <p><a target="_blank" rel="noopener" href="https://oi-wiki.org/search/alpha-beta/">$Alpha-Beta$ 算法图解</a></p>
 <p>$Alpha-Beta$ 剪枝是 $Minimax$ 算法最核心的优化，能够在不影响最终结果的前提下，安全地剪掉大量无需探索的博弈分支。</p>
-<p>$\alpha=$目前所有可能解中的最大下界<br>
+<p>$\alpha=$目前所有可能解中的最大下界<br><br>
 $\beta=$目前所有可能解中的最小上界</p>
 <h3 id="操作-2">操作</h3>
 <h1>蒙特卡洛树搜索（MCTS）</h1>
