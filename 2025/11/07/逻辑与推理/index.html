@@ -35,8 +35,10 @@
 <meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-5.png">
 <meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-6.png">
 <meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-7.png">
+<meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-8.png">
+<meta property="og:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-9.png">
 <meta property="article:published_time" content="2025-11-07T01:39:18.000Z">
-<meta property="article:modified_time" content="2025-11-08T03:58:27.492Z">
+<meta property="article:modified_time" content="2025-11-08T13:22:23.459Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image.png">
@@ -189,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-08 11:58:27" itemprop="dateModified" datetime="2025-11-08T11:58:27+08:00">2025-11-08</time>
+                <time title="修改时间：2025-11-08 21:22:23" itemprop="dateModified" datetime="2025-11-08T21:22:23+08:00">2025-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,7 +350,7 @@ $\gamma$ ：苏格拉底是要死的；<br><br>
 <p>FOIL算法概述: 从一般到特殊, 逐步给目标谓词添加前提约束谓词, 直到所构成的推理规则不覆盖任何反例<br>
 <img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-2.png" width="400" height="150" align="center"></p>
 <h1>因果推理</h1>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111340526">因果推理初探</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111340526">因果推理初探——干预</a></p>
 <h2 id="结构因果模型-SCM">结构因果模型(SCM)</h2>
 <ul>
 <li>组成：两组变量集合 $U$ 和 $V$ 以及一组函数 $f$。其中，$U$ 中的变量被称为<strong>外生变量</strong>,即这些变量处于模型之外，不对其阐述和解释；$V$ 中的变量称为<strong>内生变量</strong>；$f$ 是根据模型中其他变量取值而给V中每一个变量赋值的<strong>函数</strong>。</li>
@@ -387,7 +389,7 @@ $$P(X=x,Y=y,Z=z)=P(X=x)P(Y=y|X=x)P(Z=z|Y=y)$$</p>
 <li>路径 $p$ 被 $Z$ 阻塞当且仅当：路径 $p$ 含有链结构 $A\rightarrow B\rightarrow C$ 或分连结构 $A\leftarrow B\rightarrow C$ 且中间节点 $B$ 在 $Z$ 中，或路径 $p$ 含有汇连结构 $A\rightarrow B\leftarrow C$ 且汇连节点 $B$ 及其后代都不在 $Z$ 中。</li>
 </ul>
 <h2 id="因果效应">因果效应</h2>
-<p>以上提到的操作仍然只属于因果关系之梯的第一层级——<strong>关联</strong>。即便是“以某个变量为条件”的操作，也只是依据现有观测到的数据进行统计，并没有改变数据的分布。而要进行<strong>干预</strong>，我们就得改变现有的数据分布。</p>
+<p>以上提到的操作仍然只属于因果关系之梯的第一层级——<strong>关联</strong>。即便是“以某个变量为条件”的操作，也只是依据现有观测到的数据进行统计，并没有改变数据的分布。而要进行<strong>干预</strong>，就得改变现有的数据分布。</p>
 <h3 id="干预">干预</h3>
 <p><strong>干预</strong>（intervention）和以变量为条件（conditioning on）有着本质的区别。当我们在模型中对一个变量进行干预时，我们将<strong>固定这个变量的值</strong>。其他变量的值也随之改变；当我们以一个变量为条件时，我们什么也不会改变；我们只是将关注的范围缩小到样本的子集，选取其中我们感兴趣的变量的值。因此，<strong>以变量为条件改变的是我们看世界的角度，而干预则改变了世界本身。</strong></p>
 <p>当我们进行干预以确定一个变量的值时，我们就限制了该变量随其他自然变量而变化的自然趋势。<br>
@@ -400,8 +402,35 @@ $$P(X=x,Y=y,Z=z)=P(X=x)P(Y=y|X=x)P(Z=z|Y=y)$$</p>
 这两者是完全不同的，<strong>干预改变了原始数据的分布，而以变量为条件不改变原始数据的分布。</strong></li>
 </ul>
 <h3 id="由辛普森悖论认识do运算的干预方式">由辛普森悖论认识do运算的干预方式</h3>
+<p>辛普森悖论因果图：</p>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-8.png" width="130" height="100" align="center">
+<p>其中性别是服用药物和心脏病发作的一个混杂因子<br><br>
+为了找出这种药物在人群中到底是有效还是有害，我们构造一种假设的干预方法，我们假设给所有人都服用药物，即 $do(X=1)$ ；然后我们假设给所有人都不服用药物，即 $do(X=1)$ ，然后对两次干预的结果进行比较，即我们计算：<br>
+$$P(Y=1|do(X=1))-P(Y=1|do(X=0))$$<br>
+于是修改因果图为：</p>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-9.png" width="130" height="100" align="center">
+<p>显然因果效应 <strong>$P(Y=y|do(X=x))=P_m(Y=y|do(X=x))$</strong><br>
+又因为<br>
+(1) 边缘概率 $P(Z=z)$ 不随干预变化，即 <strong>$P_m(Z=z)=P(Z=z)$</strong><br>
+(2)条件概率 $P(Y=y|X=x,Z=z)$ 不变，即 <strong>$P_m(Y=y|X=x,Z=z)=P(Y=y|X=x,Z=z)$</strong><br>
+于是得到$$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,Z=z)P(Z=z)$$<br>
+最终得到的这个公式就叫做<strong>调整公式</strong>，这个运算过程也叫作<strong>Z调整</strong>或者Z控制</p>
+<p>调整公式的等号右边全部都是干预操作之前的概率分布，即我们可以<strong>用观测数据来进行干预</strong>。<br>
+得到如下定理：给定因果图 $G$ ，$PA$ 表示 $X$ 的父节点集合，则 <strong>$X$ 对 $Y$ 的因果效应为</strong>：<br>
+$$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,PA=z)P(PA=z)$$</p>
 <h2 id="反事实模型">反事实模型</h2>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/120909701">因果推理初探——反事实</a></p>
 <h3 id="反事实">反事实</h3>
+<p>反事实是因果关系的最高层级，涉及对已发生事件的假设性推断。它关注的是如果某个事件没有发生，结果会如何变化	。反事实推理通常需要复杂的模型和假设，无法通过直接实验来验证。</p>
+<p>干预计算的是概率分布，它的计算结果是一个概率；<br><br>
+而反事实计算的是在假设下 $Y$ 的取值，它的计算结果是一个值。</p>
+<p>反事实语句“在 $U=u$ 的情况下，若 $X$ 取值 $x$ ，则 $Y$ 取值 $y$ ”可表示为 $Y_x(u)$ ，其中 $Y$ 和 $X$ 是 $V$ 中的两个变量。</p>
+<h3 id="计算步骤">计算步骤</h3>
+<ol>
+<li>溯因：利用现有的证据 $E=e$ 确定环境 $U$ 的值</li>
+<li>干预：对模型 $M$ 进行修改，移除等式 $X$ 中的变量并将其替换为 $X=x$ ，得到修正模型 $M_x$</li>
+<li>预测：利用修正模型 $M_x$ 和环境 $U$ 计算反事实 $Y_x(u)$ 的值。</li>
+</ol>
 
     </div>
 
@@ -479,7 +508,7 @@ $$P(X=x,Y=y,Z=z)=P(X=x)P(Y=y|X=x)P(Z=z|Y=y)$$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">命题逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑等价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">推理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">范式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">谓词逻辑核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">谓词逻辑推理规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E4%B8%8E%E5%8E%9F%E5%AD%90%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">项与原子谓词公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">知识图谱推理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">因果推理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9B%A0%E6%9E%9C%E6%A8%A1%E5%9E%8B-SCM"><span class="nav-number">4.1.</span> <span class="nav-text">结构因果模型(SCM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E5%9B%BE"><span class="nav-number">4.2.</span> <span class="nav-text">因果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-number">4.3.</span> <span class="nav-text">联合概率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E5%9B%BE%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-number">4.4.</span> <span class="nav-text">因果图基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-5-png-style-float-right-margin-0-0-1em-1em-width-110-height-110-align-center"><span class="nav-number">4.4.1.</span> <span class="nav-text">链结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E8%BF%9E%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-6-png-style-float-right-margin-0-0-1em-1em-width-130-height-110-align-center"><span class="nav-number">4.4.2.</span> <span class="nav-text">分连结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E8%BF%9E%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-7-png-style-float-right-margin-0-0-1em-1em-width-130-height-100-align-center"><span class="nav-number">4.4.3.</span> <span class="nav-text">汇连结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-%E5%88%86%E7%A6%BB"><span class="nav-number">4.4.4.</span> <span class="nav-text">D-分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E6%95%88%E5%BA%94"><span class="nav-number">4.5.</span> <span class="nav-text">因果效应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B2%E9%A2%84"><span class="nav-number">4.5.1.</span> <span class="nav-text">干预</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA%E8%AE%A4%E8%AF%86do%E8%BF%90%E7%AE%97%E7%9A%84%E5%B9%B2%E9%A2%84%E6%96%B9%E5%BC%8F"><span class="nav-number">4.5.2.</span> <span class="nav-text">由辛普森悖论认识do运算的干预方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.6.</span> <span class="nav-text">反事实模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E4%BA%8B%E5%AE%9E"><span class="nav-number">4.6.1.</span> <span class="nav-text">反事实</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">命题逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑等价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">推理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">范式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">谓词逻辑核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">谓词逻辑推理规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E4%B8%8E%E5%8E%9F%E5%AD%90%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">项与原子谓词公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">知识图谱推理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">因果推理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9B%A0%E6%9E%9C%E6%A8%A1%E5%9E%8B-SCM"><span class="nav-number">4.1.</span> <span class="nav-text">结构因果模型(SCM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E5%9B%BE"><span class="nav-number">4.2.</span> <span class="nav-text">因果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-number">4.3.</span> <span class="nav-text">联合概率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E5%9B%BE%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-number">4.4.</span> <span class="nav-text">因果图基本结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-5-png-style-float-right-margin-0-0-1em-1em-width-110-height-110-align-center"><span class="nav-number">4.4.1.</span> <span class="nav-text">链结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E8%BF%9E%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-6-png-style-float-right-margin-0-0-1em-1em-width-130-height-110-align-center"><span class="nav-number">4.4.2.</span> <span class="nav-text">分连结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E8%BF%9E%E7%BB%93%E6%9E%84-img-src-%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86-image-7-png-style-float-right-margin-0-0-1em-1em-width-130-height-100-align-center"><span class="nav-number">4.4.3.</span> <span class="nav-text">汇连结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-%E5%88%86%E7%A6%BB"><span class="nav-number">4.4.4.</span> <span class="nav-text">D-分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E6%9E%9C%E6%95%88%E5%BA%94"><span class="nav-number">4.5.</span> <span class="nav-text">因果效应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B2%E9%A2%84"><span class="nav-number">4.5.1.</span> <span class="nav-text">干预</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA%E8%AE%A4%E8%AF%86do%E8%BF%90%E7%AE%97%E7%9A%84%E5%B9%B2%E9%A2%84%E6%96%B9%E5%BC%8F"><span class="nav-number">4.5.2.</span> <span class="nav-text">由辛普森悖论认识do运算的干预方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E4%BA%8B%E5%AE%9E%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.6.</span> <span class="nav-text">反事实模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E4%BA%8B%E5%AE%9E"><span class="nav-number">4.6.1.</span> <span class="nav-text">反事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.6.2.</span> <span class="nav-text">计算步骤</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
