@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-08 10:56:07" itemprop="dateModified" datetime="2025-11-08T10:56:07+08:00">2025-11-08</time>
+                <time title="修改时间：2025-11-08 11:26:28" itemprop="dateModified" datetime="2025-11-08T11:26:28+08:00">2025-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -324,8 +324,8 @@ $p \Rightarrow q$ ，$p$ 是推理前提，$q$ 是推理结论</p>
 <p>命题逻辑的局限性：在命题逻辑中，每个陈述句是最基本的单位（即原子命题），无法对原子命题进行分解。因此在命题逻辑中，不能表达<strong>局部与整体、一般与个别</strong>的关系。</p>
 <blockquote>
 <p>（如苏格拉底论断<br>
-$\alpha$ ：所有人总是要死的；<br>
-$\beta$ ：苏格拉底是人；<br>
+$\alpha$ ：所有人总是要死的；<br><br>
+$\beta$ ：苏格拉底是人；<br><br>
 $\gamma$ ：苏格拉底是要死的；<br><br>
 无法在命题逻辑的基础上完成 $\alpha \wedge \beta \rightarrow \gamma$ 的推导）</p>
 </blockquote>
@@ -431,11 +431,21 @@ $\gamma$ ：苏格拉底是要死的；<br><br>
 <p>对于任意的有向无环图模型，模型中 $d$ 个变量的联合概率分布由每个节点与其父节点之间条件概率 $P(child|parents)$ 的乘积给出：<br>
 $$P(x_1,x_2,…,x_d)=\prod_{j=1}^{d}{P(x_j|{x_{pa(j)}})}$$<br>
 其中，$x_{pa(j)}$ 表示节点 $x_j$ 的父节点集合（所有指向 $x_j$ 的节点）。这里包含了变量之间某种普遍成立的独立性假设。</p>
-<p>对于一个简单的链式图，其联合概率分布可直接写成：</p>
-<p>例：</p>
+<p>对于一个简单的链式图，其联合概率分布可直接写成：<br>
+$$P(X=x,Y=y,Z=z)=P(X=x)P(Y=y|X=x)P(Z=z|Y=y)$$</p>
+<blockquote>
+<p>例：<br>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-3.png" width="250" height="150" align="center"><br>
+有$P(z,b,c)=P©P(b|a)P(c|a,b)$<br>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-4.png" width="200" height="200" align="center"><br>
+有$P(x_1,x_2,…,x_7)=P(x_1)P(x_2)P(x_3)P(x_4|x_1,x_2,x_3)P(x_5|x_1,x_3)P(x_6|x_4)P(x_7|x_4,x_5)$</p>
+</blockquote>
 <h2 id="因果图基本结构">因果图基本结构</h2>
 <h3 id="链结构">链结构</h3>
+<p>（链中的条件独立性）对于变量 $X$ 和 $Y$ ，若 $X$ 和 $Y$ 之间只有一条单向的路径，变量Z是截断该路径的集合中的任一变量，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。<br>
+<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-5.png" width="150" height="150" align="center"><img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-6.png" width="150" height="150" align="center"></p>
 <h3 id="分连结构">分连结构</h3>
+<p>（分连中的条件独立性）若变量 $Z$ 是变量 $X$ 和 $Y$ 的共同原因，且 $X$ 到 $Y$ 只有一条路径，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。</p>
 <h3 id="汇连结构">汇连结构</h3>
 <h3 id="D-分离">D-分离</h3>
 <h2 id="因果效应">因果效应</h2>
