@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-08 11:37:08" itemprop="dateModified" datetime="2025-11-08T11:37:08+08:00">2025-11-08</time>
+                <time title="修改时间：2025-11-08 11:52:41" itemprop="dateModified" datetime="2025-11-08T11:52:41+08:00">2025-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -441,15 +441,28 @@ $$P(X=x,Y=y,Z=z)=P(X=x)P(Y=y|X=x)P(Z=z|Y=y)$$</p>
 有$P(x_1,x_2,…,x_7)=P(x_1)P(x_2)P(x_3)P(x_4|x_1,x_2,x_3)P(x_5|x_1,x_3)P(x_6|x_4)P(x_7|x_4,x_5)$</p>
 </blockquote>
 <h2 id="因果图基本结构">因果图基本结构</h2>
-<h3 id="链结构">链结构</h3>
-<p>（链中的条件独立性）对于变量 $X$ 和 $Y$ ，若 $X$ 和 $Y$ 之间只有一条单向的路径，变量Z是截断该路径的集合中的任一变量，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-5.png" style="float:right; margin:0 0 1em 1em;" width="150" height="110" alt="链式因果图" align="center"></p>
-<h3 id="分连结构">分连结构</h3>
-<p>（分连中的条件独立性）若变量 $Z$ 是变量 $X$ 和 $Y$ 的共同原因，且 $X$ 到 $Y$ 只有一条路径，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-6.png" style="float:right; margin:0 0 1em 1em;" width="150" height="150" align="center"></p>
-<h3 id="汇连结构">汇连结构</h3>
-<p>（汇连中的条件独立性）若变量 $Z$ 是变量 $X$ 和 $Y$ 的汇连节点，且 $X$ 到 $Y$ 只有一条路径，则 $X$ 和 $Y$ 相互独立，但在给定 $Z$ 或 $Z$ 的后代时， $X$ 和 $Y$ 是相关的。<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-7.png" style="float:right; margin:0 0 1em 1em;" width="150" height="150" align="center"></p>
+<h3 id="链结构-img-src-逻辑与推理-image-5-png-style-float-right-margin-0-0-1em-1em-width-110-height-110-align-center">链结构<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-5.png" style="float:right; margin:0 0 1em 1em;" width="110" height="110" align="center"></h3>
+<p>（链中的条件独立性）对于变量 $X$ 和 $Y$ ，若 $X$ 和 $Y$ 之间只有一条单向的路径，变量Z是截断该路径的集合中的任一变量，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。</p>
+<h3 id="分连结构-img-src-逻辑与推理-image-6-png-style-float-right-margin-0-0-1em-1em-width-130-height-110-align-center">分连结构<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-6.png" style="float:right; margin:0 0 1em 1em;" width="130" height="110" align="center"></h3>
+<p>（分连中的条件独立性）若变量 $Z$ 是变量 $X$ 和 $Y$ 的共同原因，且 $X$ 到 $Y$ 只有一条路径，则在给定 $Z$ 时， $X$ 和 $Y$ 条件独立。</p>
+<h3 id="汇连结构-img-src-逻辑与推理-image-7-png-style-float-right-margin-0-0-1em-1em-width-130-height-100-align-center">汇连结构<img src="/2025/11/07/%E9%80%BB%E8%BE%91%E4%B8%8E%E6%8E%A8%E7%90%86/image-7.png" style="float:right; margin:0 0 1em 1em;" width="130" height="100" align="center"></h3>
+<p>（汇连中的条件独立性）若变量 $Z$ 是变量 $X$ 和 $Y$ 的汇连节点，且 $X$ 到 $Y$ 只有一条路径，则 $X$ 和 $Y$ 相互独立，但在给定 $Z$ 或 $Z$ 的后代时， $X$ 和 $Y$ 是相关的。</p>
 <h3 id="D-分离">D-分离</h3>
+<p>定义：若限定集 $Z$ 阻塞了节点 $X$ 和 $Y$ 之间的每一条路径，则称给定 $Z$ 时， $X$ 和 $Y$ 是 <strong>D-分离</strong>，即 $X$ 和 $Y$ 条件独立。</p>
+<ul>
+<li>路径 $p$ 被 $Z$ 阻塞当且仅当：路径 $p$ 含有链结构 $A\rightarrow B\rightarrow C$ 或分连结构 $A\leftarrow B\rightarrow C$ 且中间节点 $B$ 在 $Z$ 中，或路径 $p$ 含有汇连结构 $A\rightarrow B\leftarrow C$ 且汇连节点 $B$ 及其后代都不在 $Z$ 中。</li>
+</ul>
 <h2 id="因果效应">因果效应</h2>
+<p>以上提到的操作仍然只属于因果关系之梯的第一层级——<strong>关联</strong>。即便是“以某个变量为条件”的操作，也只是依据现有观测到的数据进行统计，并没有改变数据的分布。而要进行<strong>干预</strong>，我们就得改变现有的数据分布。</p>
 <h3 id="干预">干预</h3>
+<p><strong>干预</strong>（intervention）和以变量为条件（conditioning on）有着本质的区别。当我们在模型中对一个变量进行干预时，我们将<strong>固定这个变量的值</strong>。其他变量的值也随之改变；当我们以一个变量为条件时，我们什么也不会改变；我们只是将关注的范围缩小到样本的子集，选取其中我们感兴趣的变量的值。因此，<strong>以变量为条件改变的是我们看世界的角度，而干预则改变了世界本身。</strong></p>
+<p>当我们进行干预以确定一个变量的值时，我们就限制了该变量随其他自然变量而变化的自然趋势。<br>
+在图模型中，干预的操作将<strong>删除所有指向该变量的边</strong>。<br>
+在符号的表达上，我们使用<strong>do算子</strong>来表达这种干预。如 $P(Y=y|do(X=x))$ 表示当我们干预 $X$ 的值使其为 $x$ 时，$Y=y$ 的概率。 $P(Y=y|do(X=x))$ 被成为因果效应。<br>
+从概率分布的角度来说<br>
+$P(Y=y|X=x)$ 表示的是在 $X$ 可取的所有值中，那部分样本对应的 $Y=y$ 的概率<br>
+$P(Y=y|do(X=x))$ 表示的是将每一个样本的 $X$ 的值全部固定为 $x$ 后 $Y=y$ 的概率<br>
+这两者是完全不同的，<strong>干预改变了原始数据的分布，而以变量为条件不改变原始数据的分布。</strong></p>
 <h3 id="由辛普森悖论认识do运算的干预方式">由辛普森悖论认识do运算的干预方式</h3>
 <h2 id="反事实模型">反事实模型</h2>
 <h3 id="反事实">反事实</h3>
