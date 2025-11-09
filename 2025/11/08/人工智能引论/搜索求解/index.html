@@ -28,7 +28,7 @@
 <meta property="og:description" content="启发式搜索 启发式搜索算法，就是在状态空间中先对每一条搜索分支进行评估，得到最好的分支，再从这个分支继续搜索从而到达目标，这样可以有效省略大量无谓的搜索路径，大大提高了搜索效率。  $f(n)$：评价函数，从结点 $n$ 出发选择后续结点的依据 $h(n)$：启发函数，从结点 $n$ 到目标节点的最佳路径的估计代价 $g(n)$：代价函数，表示从起始点到结点 $n$ 的代价值  贪婪最佳优先搜索（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-08T13:24:42.000Z">
-<meta property="article:modified_time" content="2025-11-08T14:24:19.010Z">
+<meta property="article:modified_time" content="2025-11-09T12:37:09.683Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-11-08 21:24:42 / 修改时间：22:24:19" itemprop="dateCreated datePublished" datetime="2025-11-08T21:24:42+08:00">2025-11-08</time>
+              <time title="创建时间：2025-11-08 21:24:42" itemprop="dateCreated datePublished" datetime="2025-11-08T21:24:42+08:00">2025-11-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-09 20:37:09" itemprop="dateModified" datetime="2025-11-09T20:37:09+08:00">2025-11-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,8 +252,52 @@ $Minimax$ 算法是Pessimistic（悲观）的，总是觉得对手agent拥有完
 <p>$\alpha=$目前所有可能解中的最大下界<br><br>
 $\beta=$目前所有可能解中的最小上界</p>
 <h3 id="操作-2">操作</h3>
+<ul>
+<li>初始时，令</li>
+<li>子节点继承父节点的值和值，再按照以下规则进行更新：</li>
+<li>
+<ul>
+<li>对于MAX节点，如果其孩子结点($MIN$结点)的收益大于当前的α值，则将α值更新为该收益</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>对于MIN结点，如果其孩子结点($MAX$结点)的收益小于当前的值，则将β值更新为该收益</li>
+</ul>
+</li>
+<li>随着搜索算法不断被执行，每个结点的值和值不断被更新。大体来说，每个结点的从其父结点提供的初始值开始，<strong>$\alpha$ 逐渐增大、$\beta$ 逐渐减小</strong>。不难验证，如果一个结点的值和值满足的条件，则该结点尚未被访问的后续结点就可以被剪枝</li>
+</ul>
 <h1>蒙特卡洛树搜索（MCTS）</h1>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53948964">MCTS通俗讲解</a></p>
+<p>MCTS放弃了对整个游戏树的确定性遍历，转而通过<strong>大量的随机模拟</strong>(Rollouts) 来评估一个走法的好坏。</p>
+<p>基本思路：对于一个走法，我们从它导致的局面开始，让两个“无脑”的玩家随机下棋直到游戏结束，然后统计成千上万次这种随机模拟的胜率，以此来判断该走法的好坏。</p>
 <h3 id="原理">原理</h3>
+<h4 id="探索与利用（Exploration-and-Exploitation）">探索与利用（Exploration and Exploitation）</h4>
+<ul>
+<li>利用：保证在过去决策中得到最佳回报</li>
+<li>探索：寄希望在未来能够得到更大回报</li>
+</ul>
+<p>探索与利用之间存在对立关系</p>
+<p>多臂赌博机：<br>
+贪心算法基本上是<strong>利用</strong>从已有尝试结果中所得估计来指导后续动作，往往不能准确反应未被（大量）探索过的动作，因此在贪心算法中增加一个能改变其“惯性”的内在动力，以使得贪心算法能访问那些未被（充分）访问过的空间</p>
+<p><strong>$\epsilon-$ 贪心</strong>算法：在第 $t$ 步，按照如下机制来选择摇动的赌博机臂：<br>
+$$l_t=\begin{cases}argmax_i\overline x_{i,T_{(i,t-1)}},&amp;\text{以 $1-\epsilon$ 的概率}\随机的i\in{1,2,…,K},&amp;\text{以 $\epsilon$ 的概率}\end{cases}$$<br>
+$l_t$ 表示第 $t$ 次行动中摇动的臂<br><br>
+$T_{(i,t-1)}$ 表示过去 $t-1$ 次行动中，一共摇动第 $i$ 个臂的次数<br><br>
+即：<strong>以 $1-\epsilon$ 的概率选择在过去 $t-1$ 次行动中所得平均收益分数最高的臂进行摇动；<br>
+以 $\epsilon$ 的概率随机选一个摇动</strong></p>
+<p>不足：与被探索次数无关，可能存在一个给出更好奖励期望的动作，但因为探索次数少而认为其期望奖励小，因此需要对那些探索次数少的动作赋予更高优先级</p>
+<h4 id="上限置信区间算法（Upper-Confidence-Bounds，UCB1）">上限置信区间算法（Upper Confidence Bounds，UCB1）</h4>
+<p>策略：为每个动作的奖励期望计算一个估计范围，优先采用<strong>估计范围上限较高</strong>的动作</p>
+<p><strong>霍夫丁不等式</strong>：</p>
+<p>将 $T_{(i,t-1)}$ 次动作看作 $T_{(i,t-1)}$ 个取值范围在 $[0,1]$ 的独立同分布随机变量的样本，有：<br>
+$$P(\mu_i-\overline x_{i,T_{(i,t-1)}}\gt\delta)\leq e^{-2T_{(i,t-1)}\delta^2}$$<br>
+$\mu_i$ 表示第 $i$ 个动作的奖励期望</p>
+<p>只需要找到一个 $\delta$ ，使得不等式右侧足够小，即可认为 $\overline x_{i,T_{(i,t-1)}}+\delta$ 是 $\mu_i$ 的一个上界<br><br>
+不妨令 $e^{-2T_{(i,t-1)}\delta^2}=t^{-4}$，则 $\mu_i$ 的上界为 $\overline x_{i,T_{(i,t-1)}}+\sqrt{\frac{2\ln t}{T_{(i,t-1)}}}$<br><br>
+若换成关于 $t$ 的其他幂函数，结果则与 $\delta$ 当前取值相差一个常数系数<br>
+于是<br>
+$$l_t=argmax_i\overline x_{i,T_{(i,t-1)}}+C\sqrt{\frac{2\ln t}{T_{(i,t-1)}}}$$</p>
 <h3 id="操作-3">操作</h3>
 
     </div>
@@ -326,7 +376,7 @@ $\beta=$目前所有可能解中的最小上界</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">启发式搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%A9%AA%E6%9C%80%E4%BD%B3%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88GBFS%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">贪婪最佳优先搜索（GBFS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">$A^*$算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">对抗搜索（博弈搜索）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E6%90%9C%E7%B4%A2%EF%BC%88Minimax-Search%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">最小最大搜索（Minimax Search）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alpha-Beta%E5%89%AA%E6%9E%9D"><span class="nav-number">2.2.</span> <span class="nav-text">Alpha-Beta剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">蒙特卡洛树搜索（MCTS）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">3.0.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C-3"><span class="nav-number">3.0.2.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">启发式搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%A9%AA%E6%9C%80%E4%BD%B3%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%EF%BC%88GBFS%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">贪婪最佳优先搜索（GBFS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">$A^*$算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">对抗搜索（博弈搜索）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7%E6%90%9C%E7%B4%A2%EF%BC%88Minimax-Search%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">最小最大搜索（Minimax Search）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alpha-Beta%E5%89%AA%E6%9E%9D"><span class="nav-number">2.2.</span> <span class="nav-text">Alpha-Beta剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">蒙特卡洛树搜索（MCTS）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">3.0.1.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%88%A9%E7%94%A8%EF%BC%88Exploration-and-Exploitation%EF%BC%89"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">探索与利用（Exploration and Exploitation）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8A%E9%99%90%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E7%AE%97%E6%B3%95%EF%BC%88Upper-Confidence-Bounds%EF%BC%8CUCB1%EF%BC%89"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">上限置信区间算法（Upper Confidence Bounds，UCB1）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C-3"><span class="nav-number">3.0.2.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
