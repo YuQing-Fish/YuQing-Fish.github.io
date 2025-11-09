@@ -28,7 +28,7 @@
 <meta property="og:description" content="启发式搜索 启发式搜索算法，就是在状态空间中先对每一条搜索分支进行评估，得到最好的分支，再从这个分支继续搜索从而到达目标，这样可以有效省略大量无谓的搜索路径，大大提高了搜索效率。  $f(n)$：评价函数，从结点 $n$ 出发选择后续结点的依据 $h(n)$：启发函数，从结点 $n$ 到目标节点的最佳路径的估计代价 $g(n)$：代价函数，表示从起始点到结点 $n$ 的代价值  贪婪最佳优先搜索（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-08T13:24:42.000Z">
-<meta property="article:modified_time" content="2025-11-09T12:46:03.288Z">
+<meta property="article:modified_time" content="2025-11-09T12:51:01.237Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-09 20:46:03" itemprop="dateModified" datetime="2025-11-09T20:46:03+08:00">2025-11-09</time>
+                <time title="修改时间：2025-11-09 20:51:01" itemprop="dateModified" datetime="2025-11-09T20:51:01+08:00">2025-11-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,16 +253,16 @@ $Minimax$ 算法是Pessimistic（悲观）的，总是觉得对手agent拥有完
 $\beta=$目前所有可能解中的最小上界</p>
 <h3 id="操作-2">操作</h3>
 <ul>
-<li>初始时，令</li>
-<li>子节点继承父节点的值和值，再按照以下规则进行更新：</li>
+<li>初始时，令 $\alpha=-\infty,\beta=+\infty$</li>
+<li>子节点继承父节点的 $\alpha$ 值和 $\beta$ 值，再按照以下规则进行更新：</li>
 <li>
 <ul>
-<li>对于MAX节点，如果其孩子结点($MIN$结点)的收益大于当前的α值，则将α值更新为该收益</li>
+<li>对于$MAX$结点，如果其孩子结点($MIN$结点)的收益大于当前的 $\alpha$ 值，则将 $\alpha$ 值更新为该收益</li>
 </ul>
 </li>
 <li>
 <ul>
-<li>对于MIN结点，如果其孩子结点($MAX$结点)的收益小于当前的值，则将β值更新为该收益</li>
+<li>对于$MIN$结点，如果其孩子结点($MAX$结点)的收益小于当前的 $\beta$ 值，则将 $\beta$ 值更新为该收益</li>
 </ul>
 </li>
 <li>随着搜索算法不断被执行，每个结点的值和值不断被更新。大体来说，每个结点的从其父结点提供的初始值开始，<strong>$\alpha$ 逐渐增大、$\beta$ 逐渐减小</strong>。不难验证，如果一个结点的值和值满足的条件，则该结点尚未被访问的后续结点就可以被剪枝</li>
