@@ -147,6 +147,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/11/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fish">
+      <meta itemprop="description" content="大胜利！！！！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼塘">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/11/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">机器学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：20:32:15" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">人工智能引论</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>基本概念</h1>
+<h2 id="分类">分类</h2>
+<ul>
+<li>监督学习：从标记的训练数据中学习并建立模型，然后基于该模型预测未知的样本，典型任务包括<strong>分类、回归</strong></li>
+<li>无监督学习：输入样本无标记，自动地从样本中学习特征以实现预测，典型任务包括<strong>聚类、降维、异常检测等</strong></li>
+<li>半监督学习：只有少量的标记数据，依靠大量的无监督数据来提高算法性能</li>
+<li>强化学习：通过智能体与环境的交互，通过试错学习最优策略</li>
+</ul>
+<h2 id="三要素">三要素</h2>
+<p>模型：输入特征到输出标签的映射函数 $f(x,\theta)$，由参数向量 <strong>$\theta$</strong> 决定</p>
+<h1>监督学习</h1>
+<h2 id="重要概念">重要概念</h2>
+<h3 id="损失函数">损失函数</h3>
+<p>也称为误差函数，一个衡量预测结果与真实结果之间差异的函数，通过计算模型的预测值与真实值之间的不一致程度，来评估模型的性能。</p>
+<ul>
+<li>0-1损失函数：$Loss(y_i,f(x_i))=\begin{cases}1,f(x_i)\neq y_i\\0,f(x_i)=y_i\end{cases}$</li>
+<li>平方损失函数：$Loss(y_i,f(x_i))=(y_i-f(x_i))^2$</li>
+<li>绝对损失函数：$Loss(y_i,f(x_i))=|(y_i-f(x_i))|$</li>
+<li>对数损失函数：$Loss(y_i,P(y_i|x_i))=-\log (P(y_i|x_i))$</li>
+</ul>
+<h3 id="经验风险">经验风险</h3>
+<p>模型在<strong>训练集</strong>上的平均损失。经验风险越小，学习模型对训练数据拟合程度越好。<br>
+$$R_{emp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i))$$<br>
+大数定律：当样本容量n趋近于无穷时，经验风险 $R_{emp}(\theta)$ 趋近于期望风险 $R_{exp}(\theta)$</p>
+<p><strong>经验风险最小化</strong>准则：最优化经验风险，找到一组 $\theta^<em>$ 使得经验损失函数取得最小值<br>
+$$\theta^</em>=argmin_\theta R_{emp}(\theta)$$</p>
+<h3 id="期望风险">期望风险</h3>
+<p>模型在<strong>测试集</strong>中无穷多样本上的平均损失。期望模型越小，学习所得模型越好。<br>
+$$R_{exp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i))$$</p>
+<h3 id="“过拟合”和“欠拟合”">“过拟合”和“欠拟合”</h3>
+<p><strong>过拟合</strong>：在训练集上表现好（经验风险小），在测试集上表现差（期望风险大），主要原因有：模型太复杂；训练数据太少；训练时间/轮数过长</p>
+<p><strong>欠拟合</strong>：在训练集和测试集上表现都差（经验风险大，期望风险大），主要原因有：模型太简单（特征少、模型能力弱）；训练时间/轮数不够：正则化过强</p>
+<p>如果学习模型在训练集和测试集上表现都很好，我们就说这个模型泛化能力强</p>
+<h3 id="结构风险">结构风险</h3>
+<h2 id="分类-2">分类</h2>
+<p>定义：通过对已知类别训练集的计算和分析，从中发现类别规则并预测新数据的类别</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/11/08/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/%E6%90%9C%E7%B4%A2%E6%B1%82%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -762,7 +865,7 @@ $$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,PA=z)P(PA=z)$$</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
