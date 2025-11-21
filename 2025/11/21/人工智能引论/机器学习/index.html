@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="基本概念 分类  监督学习：从标记的训练数据中学习并建立模型，然后基于该模型预测未知的样本，典型任务包括分类、回归 无监督学习：输入样本无标记，自动地从样本中学习特征以实现预测，典型任务包括聚类、降维、异常检测等 半监督学习：只有少量的标记数据，依靠大量的无监督数据来提高算法性能 强化学习：通过智能体与环境的交互，通过试错学习最优策略  三要素 模型：输入特征到输出标签的映射函数 $f(x,\th">
+  <meta name="description" content="基本概念 分类  监督学习：从标记的训练数据中学习并建立模型，然后基于该模型预测未知的样本，典型任务包括分类、回归 无监督学习：输入样本无标记，自动地从样本中学习特征以实现预测，典型任务包括聚类、降维、异常检测等 半监督学习：只有少量的标记数据，依靠大量的无监督数据来提高算法性能 强化学习：通过智能体与环境的交互，通过试错学习最优策略  三要素  模型：输入特征到输出标签的映射函数 $f(x,\t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="http://example.com/2025/11/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="鱼塘">
-<meta property="og:description" content="基本概念 分类  监督学习：从标记的训练数据中学习并建立模型，然后基于该模型预测未知的样本，典型任务包括分类、回归 无监督学习：输入样本无标记，自动地从样本中学习特征以实现预测，典型任务包括聚类、降维、异常检测等 半监督学习：只有少量的标记数据，依靠大量的无监督数据来提高算法性能 强化学习：通过智能体与环境的交互，通过试错学习最优策略  三要素 模型：输入特征到输出标签的映射函数 $f(x,\th">
+<meta property="og:description" content="基本概念 分类  监督学习：从标记的训练数据中学习并建立模型，然后基于该模型预测未知的样本，典型任务包括分类、回归 无监督学习：输入样本无标记，自动地从样本中学习特征以实现预测，典型任务包括聚类、降维、异常检测等 半监督学习：只有少量的标记数据，依靠大量的无监督数据来提高算法性能 强化学习：通过智能体与环境的交互，通过试错学习最优策略  三要素  模型：输入特征到输出标签的映射函数 $f(x,\t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-21T10:57:44.000Z">
-<meta property="article:modified_time" content="2025-11-21T12:32:15.139Z">
+<meta property="article:modified_time" content="2025-11-21T13:24:31.192Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：20:32:15" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
+              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：21:24:31" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,8 +206,11 @@
 <li>强化学习：通过智能体与环境的交互，通过试错学习最优策略</li>
 </ul>
 <h2 id="三要素">三要素</h2>
-<p>模型：输入特征到输出标签的映射函数 $f(x,\theta)$，由参数向量 <strong>$\theta$</strong> 决定</p>
-<h1>监督学习</h1>
+<ul>
+<li>模型：输入特征到输出标签的映射函数 $f(x,\theta)$，由参数向量 <strong>$\theta$</strong> 决定。学习的目标就是，通过观察假设空间 $F$ 在训练集 $T$ 上的特性，从中选择一个理想的假设 $f^*\in F$</li>
+<li>学习准则：决定如何从假设空间中选择最优模型，常见策略包括<strong>期望风险最小化、经验风险最小化和结构风险最小化</strong></li>
+<li>优化算法：用于求解目标函数的最优参数 $\theta^*$</li>
+</ul>
 <h2 id="重要概念">重要概念</h2>
 <h3 id="损失函数">损失函数</h3>
 <p>也称为误差函数，一个衡量预测结果与真实结果之间差异的函数，通过计算模型的预测值与真实值之间的不一致程度，来评估模型的性能。</p>
@@ -218,19 +221,23 @@
 <li>对数损失函数：$Loss(y_i,P(y_i|x_i))=-\log (P(y_i|x_i))$</li>
 </ul>
 <h3 id="经验风险">经验风险</h3>
-<p>模型在<strong>训练集</strong>上的平均损失。经验风险越小，学习模型对训练数据拟合程度越好。<br>
-$$R_{emp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i))$$<br>
+<p>模型在<strong>训练集</strong>上的平均损失。<strong>经验风险越小，学习模型对训练数据拟合程度越好</strong>。<br>
+$$R_{emp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i,\theta))$$<br>
 大数定律：当样本容量n趋近于无穷时，经验风险 $R_{emp}(\theta)$ 趋近于期望风险 $R_{exp}(\theta)$</p>
-<p><strong>经验风险最小化</strong>准则：最优化经验风险，找到一组 $\theta^<em>$ 使得经验损失函数取得最小值<br>
+<p>**经验风险最小化（ERM）**准则：最优化经验风险，找到一组 $\theta^<em>$ 使得经验损失函数取得最小值<br>
 $$\theta^</em>=argmin_\theta R_{emp}(\theta)$$</p>
 <h3 id="期望风险">期望风险</h3>
-<p>模型在<strong>测试集</strong>中无穷多样本上的平均损失。期望模型越小，学习所得模型越好。<br>
-$$R_{exp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i))$$</p>
+<p>模型在<strong>测试集</strong>中无穷多样本上的平均损失。<strong>期望模型越小，学习所得模型越好</strong>。<br>
+$$R_{exp}(\theta)=\int_{X\times Y}Loss(y_i,f(x,\theta))P(x,y)dxdy$$<br>
+这是理论上模型 $f(x,\theta)$ 关于联合分布 $P(X,Y)$ 的平均意义下的代价损失</p>
 <h3 id="“过拟合”和“欠拟合”">“过拟合”和“欠拟合”</h3>
 <p><strong>过拟合</strong>：在训练集上表现好（经验风险小），在测试集上表现差（期望风险大），主要原因有：模型太复杂；训练数据太少；训练时间/轮数过长</p>
 <p><strong>欠拟合</strong>：在训练集和测试集上表现都差（经验风险大，期望风险大），主要原因有：模型太简单（特征少、模型能力弱）；训练时间/轮数不够：正则化过强</p>
 <p>如果学习模型在训练集和测试集上表现都很好，我们就说这个模型泛化能力强</p>
 <h3 id="结构风险">结构风险</h3>
+<p>我们遇到的机器学习问题通常是不知道输入输出真实分布 $P(X,Y)$ 的，只知道训练集中样本的分布，因而无法实现<strong>期望风险最小化</strong>；如果用训练集上的经验分布 $\hat P(X,Y)$ 替代真实的分布 $P(X,Y)$ ，即<strong>经验风险最小化</strong>，则很容易导致模型记住了训练数据中的每个细节和噪声，从而导致过拟合</p>
+<p><strong>结构风险最小化（SRM）<strong>准则是为了</strong>防止过拟合</strong>而提出来的策略，通过控制模型复杂度与优化经验风险，实现期望风险的最小化</p>
+<h1>监督学习</h1>
 <h2 id="分类-2">分类</h2>
 <p>定义：通过对已知类别训练集的计算和分析，从中发现类别规则并预测新数据的类别</p>
 
@@ -310,7 +317,7 @@ $$R_{exp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i))$$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">三要素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">重要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.1.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9"><span class="nav-number">2.1.2.</span> <span class="nav-text">经验风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E9%A3%8E%E9%99%A9"><span class="nav-number">2.1.3.</span> <span class="nav-text">期望风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%9C%E8%BF%87%E6%8B%9F%E5%90%88%E2%80%9D%E5%92%8C%E2%80%9C%E6%AC%A0%E6%8B%9F%E5%90%88%E2%80%9D"><span class="nav-number">2.1.4.</span> <span class="nav-text">“过拟合”和“欠拟合”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9"><span class="nav-number">2.1.5.</span> <span class="nav-text">结构风险</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB-2"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.</span> <span class="nav-text">重要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9"><span class="nav-number">1.3.2.</span> <span class="nav-text">经验风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E9%A3%8E%E9%99%A9"><span class="nav-number">1.3.3.</span> <span class="nav-text">期望风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%80%9C%E8%BF%87%E6%8B%9F%E5%90%88%E2%80%9D%E5%92%8C%E2%80%9C%E6%AC%A0%E6%8B%9F%E5%90%88%E2%80%9D"><span class="nav-number">1.3.4.</span> <span class="nav-text">“过拟合”和“欠拟合”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9"><span class="nav-number">1.3.5.</span> <span class="nav-text">结构风险</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB-2"><span class="nav-number">2.1.</span> <span class="nav-text">分类</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
