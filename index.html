@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：21:28:43" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
+              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：22:29:09" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,25 +219,35 @@
 <li>对数损失函数：$Loss(y_i,P(y_i|x_i))=-\log (P(y_i|x_i))$</li>
 </ul>
 <h3 id="经验风险">经验风险</h3>
-<p>模型在<strong>训练集</strong>上的平均损失。<strong>经验风险越小，学习模型对训练数据拟合程度越好</strong>。<br>
+<p>模型在<strong>训练集</strong>上的平均损失。<strong>经验风险越小，学习模型对训练数据拟合程度越好</strong>。</p>
+<p>经验风险：<br>
 $$R_{emp}(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i,\theta))$$<br>
 大数定律：当样本容量n趋近于无穷时，经验风险 $R_{emp}(\theta)$ 趋近于期望风险 $R_{exp}(\theta)$</p>
 <p><strong>经验风险最小化</strong>准则：最优化经验风险，找到一组 $\theta^*$ 使得经验损失函数取得最小值</p>
 <p>$$\theta^*=argmin_\theta R_{emp}(\theta)$$</p>
 <h3 id="期望风险">期望风险</h3>
-<p>模型在<strong>测试集</strong>中无穷多样本上的平均损失。<strong>期望模型越小，学习所得模型越好</strong>。<br>
+<p>模型在<strong>测试集</strong>中无穷多样本上的平均损失。<strong>期望模型越小，学习所得模型越好</strong>。</p>
+<p>期望风险：<br>
 $$R_{exp}(\theta)=\int_{X\times Y}Loss(y_i,f(x,\theta))P(x,y)dxdy$$<br>
 这是理论上模型 $f(x,\theta)$ 关于联合分布 $P(X,Y)$ 的平均意义下的代价损失</p>
 <h3 id="“过拟合”和“欠拟合”">“过拟合”和“欠拟合”</h3>
 <p><strong>过拟合</strong>：在训练集上表现好（经验风险小），在测试集上表现差（期望风险大），主要原因有：模型太复杂；训练数据太少；训练时间/轮数过长</p>
 <p><strong>欠拟合</strong>：在训练集和测试集上表现都差（经验风险大，期望风险大），主要原因有：模型太简单（特征少、模型能力弱）；训练时间/轮数不够：正则化过强</p>
-<p>如果学习模型在训练集和测试集上表现都很好，我们就说这个模型泛化能力强</p>
+<p>如果学习模型在训练集和测试集上表现都很好，我们就说这个模型<strong>泛化能力</strong>强</p>
 <h3 id="结构风险">结构风险</h3>
 <p>我们遇到的机器学习问题通常是不知道输入输出真实分布 $P(X,Y)$ 的，只知道训练集中样本的分布，因而无法实现<strong>期望风险最小化</strong>；如果用训练集上的经验分布 $\hat P(X,Y)$ 替代真实的分布 $P(X,Y)$ ，即<strong>经验风险最小化</strong>，则很容易导致模型记住了训练数据中的每个细节和噪声，从而导致过拟合</p>
-<p><strong>结构风险最小化</strong>是为了<strong>防止过拟合</strong>而提出来的策略，通过控制模型复杂度与优化经验风险，实现期望风险的最小化</p>
+<p><strong>结构风险最小化</strong>是为了<strong>防止过拟合</strong>而提出来的策略，通过控制模型复杂度与优化经验风险，实现期望风险的最小化。它在经验风险最小化的基础上引入了参数的<strong>正则化</strong>，来限制模型能力，使其不要过度地最小化经验风险。</p>
+<p>结构风险：<br>
+$$R_{srm}(\theta)=R_{emp}(\theta)+\lambda J(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(y_i,f(x_i,\theta))+\lambda J(\theta)$$<br>
+式中 $J(\theta)$ 是正则化项或惩罚项，它衡量模型的复杂度。$\lambda$ 是正则化系数，用于控制正则化强度。</p>
 <h1>监督学习</h1>
-<h2 id="分类-2">分类</h2>
-<p>定义：通过对已知类别训练集的计算和分析，从中发现类别规则并预测新数据的类别</p>
+<h2 id="判别模型和生成模型">判别模型和生成模型</h2>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74586507">判别式模型和生成式模型</a></p>
+<p>监督学习方法可以分为<strong>生成方法</strong>和<strong>判别方法</strong>，所学到的模型分别称为<strong>生成模型</strong>和<strong>判别模型</strong></p>
+<p><strong>判别模型</strong>是基于判别函数 $f(X)$ 或者条件概率分布 $P(Y|X)$ 生成的模型，学习不同类别之间的最优边界，无法反映训练数据本身的特性。它关心在给定输入数据下，预测该数据的输出是什么。典型判别模型包括<strong>回归模型、神经网络、支持向量机和Ada Boosting</strong>等</p>
+<p><strong>生成模型</strong>从数据中学习联合分布概率 $P(X,Y)$，然后通过贝叶斯定理得到 $P(Y|X)=\frac{P(X,Y)}{P(X)}=\frac{P(X|Y)P(Y)}{P(X)}$。它关心每个类别本身的特征。典型生成模型包括<strong>贝叶斯方法、隐马尔科夫链</strong>等</p>
+<p>简单地说，<strong>判别式模型是针对条件分布建模，而生成式模型则针对联合分布进行建模</strong></p>
+<h2 id="回归分析">回归分析</h2>
 
       
     </div>
