@@ -170,10 +170,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-11-21 18:57:44 / 修改时间：22:29:09" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
+              <time title="创建时间：2025-11-21 18:57:44" itemprop="dateCreated datePublished" datetime="2025-11-21T18:57:44+08:00">2025-11-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-22 17:02:41" itemprop="dateModified" datetime="2025-11-22T17:02:41+08:00">2025-11-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,6 +254,22 @@ $$R_{srm}(\theta)=R_{emp}(\theta)+\lambda J(\theta)=\frac{1}{n}\sum_{i=1}^nLoss(
 <p><strong>生成模型</strong>从数据中学习联合分布概率 $P(X,Y)$，然后通过贝叶斯定理得到 $P(Y|X)=\frac{P(X,Y)}{P(X)}=\frac{P(X|Y)P(Y)}{P(X)}$。它关心每个类别本身的特征。典型生成模型包括<strong>贝叶斯方法、隐马尔科夫链</strong>等</p>
 <p>简单地说，<strong>判别式模型是针对条件分布建模，而生成式模型则针对联合分布进行建模</strong></p>
 <h2 id="回归分析">回归分析</h2>
+<p>回归分析是一种预测性的建模技术，它研究的是因变量（目标）和自变量（预测器）之间的关系，通常用于预测分析，时间序列模型以及发现变量之间的因果关系</p>
+<p>回归分析的主要算法包括：线性回归、逻辑回归、多项式回归、逐步回归、岭回归、套索回归、弹性网回归</p>
+<h3 id="线性回归">线性回归</h3>
+<p>线性回归使用最佳的拟合直线（也就是回归线）在因变量 $Y$ 和一个或多个自变量 $X$ 之间建立一种关系</p>
+<p>回归模型：<br>
+$$Y=a*X+b$$<br>
+其中，$a$ 表示斜率，$b$ 表示截距</p>
+<p>误差为$$Loss(a,b)=\sum_{i=1}^n(y_i-a*x_i-b)^2$$</p>
+<p>用<strong>最小二乘法</strong>来求最佳拟合线，即寻找一组 $a$ 和 $b$，使得 $Loss(a,b)$ 最小</p>
+<p>只需 $Loss(a,b)$ 分别对 $a$ 和 $b$ 求导，令其导数值为0，即可求得：<br>
+$$a=\frac{\sum_{i=1}^n(x_i-\overline x)(y_i-\overline y)}{\sum_{i=1}^n(x_i-\overline x)^2}=\frac{\sum_{i=1}^nx_iy_i-n\overline x\overline y}{\sum_{i=1}^nx_i^2-n\overline x^2}$$<br>
+$$b=\overline y-a*\overline x$$</p>
+<h3 id="逻辑回归">逻辑回归</h3>
+<p>逻辑回归用于拟合描述<strong>二元</strong>因变量与一个或多个自变量之间关系的回归模型。使用逻辑回归时，因变量 $Y$ 的值为0或1</p>
+<h3 id="多项式回归">多项式回归</h3>
+<p>使用多项式回归时，因变量和自变量之间的关系是<strong>非线性</strong>的</p>
 
       
     </div>
