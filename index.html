@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-25 21:10:22" itemprop="dateModified" datetime="2025-11-25T21:10:22+08:00">2025-11-25</time>
+                <time title="修改时间：2025-11-25 21:40:36" itemprop="dateModified" datetime="2025-11-25T21:40:36+08:00">2025-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -300,6 +300,23 @@ $$J(\omega)=\frac{\omega^TS_b\omega}{\omega^TS_w\omega}$$</p>
 $$S_w^{-1}S_b\omega=\lambda\omega$$<br>
 由此可见，$\lambda$ 和 $\omega$ 分别是 $S_w^{-1}S_b$ 的特征根和特征向量，$S_w^{-1}S_b\omega=\lambda\omega$ 也被称为Fisher线性判别</p>
 <p>对于二分类，最优投影方向 $\omega^*=S_w^{-1}(\mu_1-\mu_2)$</p>
+<h3 id="操作">操作</h3>
+<p>对于输入数据集 $D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$，其中，任意样本 $x_i$ 为 $n$ 维向量，$y_i\in {C_1,C_2,…,C_k}$ 降维到 $r$ 维</p>
+<ul>
+<li>计算数据样本集中每个类别样本的均值</li>
+<li>计算类内散度矩阵 $S_w$ 和类间散度矩阵 $S_b$</li>
+<li>根据 $S_w^{-1}S_b\omega=\lambda\omega$ 求解 $S_w^{-1}S_b$ 的特征值和特征向量，选取前 $r$ 个最大的特征值和对应的特征向量 $\omega_1,\omega_2,…,\omega_r$，得到投影矩阵 $W$</li>
+<li>对样本集中的每一个样本特征 $x_i$，转化为新的样本 $z_i=W^Tx_i$</li>
+<li>得到输出样本集 $D’={(z_1,y_1),(z_2,y_2),…,(z_m,y_m)}$</li>
+</ul>
+<blockquote>
+<p>LDA与PCA（主成分分析）的区别：</p>
+<ul>
+<li>LDA是有监督的算法，目标是区分类别；PCA是无监督的算法，目标是保留最大方差</li>
+<li>LDA寻找能最好地分离不同类别的方向；PCA寻找数据方差最大的方向（即数据最分散的方向）</li>
+<li>LDA投影后的数据，类别区分度最高；PCA投影后的数据，信息保留最全（但未必利于分类）</li>
+</ul>
+</blockquote>
 
       
     </div>
