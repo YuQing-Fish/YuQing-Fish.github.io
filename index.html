@@ -1024,30 +1024,9 @@ $$P(Y=y|do(X=x))=\sum_zP(Y=y|X=x,PA=z)P(PA=z)$$</p>
 
       </div>
 
-<div class="hitokoto-wrap sidebar-panel">
-  <div id="hitokoto" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin: 10px 0; border-left: 4px solid #3498db;">
-    <p id="hitokoto-text" style="margin: 0; font-style: italic; color: #2c3e50; font-size: 14px; line-height: 1.5;">正在加载一言...</p>
-  </div>
-</div>
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
-
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('https://v1.hitokoto.cn')
-      .then(response => response.json())
-      .then(data => {
-        const hitokoto = document.getElementById('hitokoto-text');
-        hitokoto.innerText = data.hitokoto + ' —— ' + data.from;
-      })
-      .catch(error => {
-        console.error('加载一言失败:', error);
-        document.getElementById('hitokoto-text').innerText = '生活不止眼前的苟且，还有诗和远方。';
-      });
-  });
-  </script>
 
 
 
