@@ -336,6 +336,22 @@
   </aside>
   <div id="sidebar-dimmer"></div>
 
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://v1.hitokoto.cn')
+      .then(response => response.json())
+      .then(data => {
+        const hitokoto = document.getElementById('hitokoto-text');
+        hitokoto.innerText = data.hitokoto + ' —— ' + data.from;
+      })
+      .catch(error => {
+        console.error('加载一言失败:', error);
+        document.getElementById('hitokoto-text').innerText = '生活不止眼前的苟且，还有诗和远方。';
+      });
+  });
+  </script>
+
+
 
       </div>
     </main>
