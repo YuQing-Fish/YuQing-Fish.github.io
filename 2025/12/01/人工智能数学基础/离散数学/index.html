@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="集合论 基础概念 略 集合运算与定律 略 笛卡尔积 笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能有序对组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律 笛卡尔积的符号化为： $$A×B&#x3D;{(x,y)|x\in A\wedge y\in B}$$  假设 A&#x3D;{a,b}, B&#x3D;{0,1,2}，则： A×B&#x3D;{(a, 0), (a, 1), (a, 2),">
+  <meta name="description" content="集合论 基础概念 略 集合运算与定律 略 笛卡尔积 笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能有序对组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律 笛卡尔积的符号化为： $$A×B&#x3D;\lbrace (x,y)|x\in A\wedge y\in B\rbrace $$  假设 A&#x3D;{a,b}, B&#x3D;{0,1,2}，则： A×B&#x3D;{(a, 0), (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="离散数学">
 <meta property="og:url" content="http://example.com/2025/12/01/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/index.html">
 <meta property="og:site_name" content="鱼塘">
-<meta property="og:description" content="集合论 基础概念 略 集合运算与定律 略 笛卡尔积 笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能有序对组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律 笛卡尔积的符号化为： $$A×B&#x3D;{(x,y)|x\in A\wedge y\in B}$$  假设 A&#x3D;{a,b}, B&#x3D;{0,1,2}，则： A×B&#x3D;{(a, 0), (a, 1), (a, 2),">
+<meta property="og:description" content="集合论 基础概念 略 集合运算与定律 略 笛卡尔积 笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能有序对组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律 笛卡尔积的符号化为： $$A×B&#x3D;\lbrace (x,y)|x\in A\wedge y\in B\rbrace $$  假设 A&#x3D;{a,b}, B&#x3D;{0,1,2}，则： A×B&#x3D;{(a, 0), (">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-01T11:22:23.000Z">
-<meta property="article:modified_time" content="2025-12-01T16:04:56.051Z">
+<meta property="article:modified_time" content="2025-12-01T16:32:11.976Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-12-02 00:04:56" itemprop="dateModified" datetime="2025-12-02T00:04:56+08:00">2025-12-02</time>
+                <time title="修改时间：2025-12-02 00:32:11" itemprop="dateModified" datetime="2025-12-02T00:32:11+08:00">2025-12-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,7 +198,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
 <h2 id="笛卡尔积">笛卡尔积</h2>
 <p>笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能<strong>有序对</strong>组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律</p>
 <p>笛卡尔积的符号化为：<br>
-$$A×B={(x,y)|x\in A\wedge y\in B}$$</p>
+$$A×B=\lbrace (x,y)|x\in A\wedge y\in B\rbrace $$</p>
 <blockquote>
 <p>假设 A={a,b}, B={0,1,2}，则：<br>
 A×B={(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)}<br>
@@ -240,17 +240,15 @@ B×A={(0, a), (0, b), (1, a), (1, b), (2, a), (2, b)}</p>
 二元关系简称为关系</li>
 <li>$R$ 是有序对的集合，$&lt;x,y&gt;\in R\Leftrightarrow xRy$ 是关系的两种表示方法，表示 $x$ 与 $y$ 有 $R$ 关系</li>
 </ul>
-<p>关系的<strong>定义域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第一个元素组成的集合，称为 $R$ 的定义域，记作 $dom\ R$，即 $dom\ R={x|\exists y(&lt;x,y&gt;\in R)}$</p>
-<p>关系的<strong>值域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第二个元素组成的集合，称为 $R$ 的值域，记作 $ran\ R$，即 $ran\ R={y|\exists x(&lt;x,y&gt;\in R)}$</p>
+<p>关系的<strong>定义域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第一个元素组成的集合，称为 $R$ 的定义域，记作 $dom\ R$，即 $dom\ R=\lbrace x|\exists y(&lt;x,y&gt;\in R)\rbrace$</p>
+<p>关系的<strong>值域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第二个元素组成的集合，称为 $R$ 的值域，记作 $ran\ R$，即 $ran\ R=\lbrace y|\exists x(&lt;x,y&gt;\in R)\rbrace$</p>
 <h2 id="关系的性质">关系的性质</h2>
 <p><strong>自反性</strong>：设 $R\subseteq A\times A$，如果对于 $\forall x\in A$都有 $xRx$，则称 $R$ 是 $A$ 中的自反关系</p>
 <blockquote>
-<p>例<br>
-$A={1，2，3}$<br><br>
-对于关系：<br>
-$S1={&lt;1,1&gt;,&lt;2,2&gt;}$<br><br>
-$S2={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;}$<br><br>
-$S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
+<p>例如，$A=\lbrace 1，2，3\rbrace $，则对于关系：<br><br>
+$S1=\lbrace &lt;1,1&gt;,&lt;2,2&gt;\rbrace $，<br><br>
+$S2=\lbrace &lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;\rbrace $，<br><br>
+$S3=\lbrace &lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;\rbrace $，<br><br>
 其中 $S2、S3$ 是自反的，$S1$不是</p>
 </blockquote>
 <p><strong>反自反性</strong>：设 $R$ 为集合 $A$ 中关系，如果对于 $\forall x\in A$ 都有 $xRx$ 不成立，则称 $R$ 是 $A$ 中的反自反关系</p>
@@ -277,7 +275,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 </ul>
 <p>则称 $R’$ 是 $R$ 的自反（对称、传递）闭包，记作 $r\left(R\right),s\left(R\right),t\left(R\right)$</p>
 <h2 id="集合的划分与覆盖">集合的划分与覆盖</h2>
-<p><strong>覆盖</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi={A_1,A_2,…,A_m}$，如果</p>
+<p><strong>覆盖</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi=\lbrace A_1,A_2,…,A_m\rbrace $，如果</p>
 <ul>
 <li>
 <p>$A_i\subseteq A$ 且 $A_i\neq \phi$</p>
@@ -287,7 +285,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 <p>则称 $\Pi$ 是 $A$ 的一个覆盖</p>
 </li>
 </ul>
-<p><strong>划分</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi={A_1,A_2,…,A_m}$，如果</p>
+<p><strong>划分</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi=\lbrace A_1,A_2,…,A_m\rbrace $，如果</p>
 <ul>
 <li>
 <p>$A_i\subseteq A$ 且 $A_i\neq \phi$</p>
@@ -303,11 +301,18 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 <h2 id="三种关系">三种关系</h2>
 <h3 id="等价关系">等价关系</h3>
 <p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、对称的和传递的，则称 $R$ 是 $A$ 上的<strong>等价关系</strong></p>
-<p><strong>等价类</strong>：设 $R$ 为集合 $A$ 中等价关系，$a\in A$，由 $a$ 确定的集合 $[a]_R={x|x\in A\ \wedge &lt;a,x&gt;\in R}$，称集合 $[a]_R$ 为 $a$ 的关于 $R$ 所生成的等价类，简称 $a$ 的等价类</p>
+<p><strong>等价类</strong>：设 $R$ 为集合 $A$ 上的等价关系，$a\in A$，由 $a$ 确定的集合 $[a]_R=\lbrace x|x\in A\ \wedge &lt;a,x&gt;\in R\rbrace $，称集合 $[a]_R$ 为 $a$ 的关于 $R$ 所生成的等价类，简称 $a$ 的等价类</p>
 <p><strong>商集</strong>：$R$ 是 $A$ 上的等价关系，由 $R$ 的所有等价类构成的集合称为 $A$ 关于 $R$ 的商集，记作 $A/R$</p>
 <blockquote>
-<p>例如，$A={1,2,3,4,5,6,7}$，$R$ 是 $A$ 上的模3同余关系，则 $A/R={ [1]_R,[2]_R,[3]_R} ={ {1,4,7},{2,5},{3,6} }$</p>
+<p>例如，$A=\lbrace 1,2,3,4,5,6,7\rbrace $，$R$ 是 $A$ 上的模3同余关系，则<br><br>
+$A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 2,5\rbrace ,\lbrace 3,6\rbrace  \rbrace $</p>
 </blockquote>
+<h3 id="相容关系">相容关系</h3>
+<p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、对称的，则称 $R$ 是 $A$ 上的<strong>相容关系</strong></p>
+<p><strong>相容类</strong>：设 $r$ 为集合 $A$ 上的相容关系，$C\subseteq A$，如果对于 $C$ 中 $\forall x,y$，有 $&lt;x,y&gt;\in r$，称 $C$ 是 $r$ 的一个相容类</p>
+<p><strong>最大相容类</strong>：设 $r$ 为集合 $A$ 上的相容关系，$C$ 是 $r$ 的一个相容类，如果 $C$ 不能被其他相容类所真包含，则称 $C$ 是一个最大相容类</p>
+<h3 id="偏序关系">偏序关系</h3>
+<p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、传递的和反对称的，则称 $R$ 是 $A$ 上的<strong>偏序关系</strong></p>
 
     </div>
 
@@ -385,7 +390,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">集合论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E4%B8%8E%E5%AE%9A%E5%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">集合运算与定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">1.3.</span> <span class="nav-text">笛卡尔积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">关系的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">关系的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">运算性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">关系的闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%88%92%E5%88%86%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="nav-number">2.5.</span> <span class="nav-text">集合的划分与覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.</span> <span class="nav-text">三种关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.1.</span> <span class="nav-text">等价关系</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">集合论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E4%B8%8E%E5%AE%9A%E5%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">集合运算与定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">1.3.</span> <span class="nav-text">笛卡尔积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">关系的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">关系的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">运算性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">关系的闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%88%92%E5%88%86%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="nav-number">2.5.</span> <span class="nav-text">集合的划分与覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.</span> <span class="nav-text">三种关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.1.</span> <span class="nav-text">等价关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%AE%B9%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.2.</span> <span class="nav-text">相容关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.3.</span> <span class="nav-text">偏序关系</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

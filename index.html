@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-12-02 00:04:56" itemprop="dateModified" datetime="2025-12-02T00:04:56+08:00">2025-12-02</time>
+                <time title="修改时间：2025-12-02 00:32:11" itemprop="dateModified" datetime="2025-12-02T00:32:11+08:00">2025-12-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,7 +196,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -223,7 +223,7 @@
 <h2 id="笛卡尔积">笛卡尔积</h2>
 <p>笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能<strong>有序对</strong>组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律</p>
 <p>笛卡尔积的符号化为：<br>
-$$A×B={(x,y)|x\in A\wedge y\in B}$$</p>
+$$A×B=\lbrace (x,y)|x\in A\wedge y\in B\rbrace $$</p>
 <blockquote>
 <p>假设 A={a,b}, B={0,1,2}，则：<br>
 A×B={(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)}<br>
@@ -238,17 +238,15 @@ B×A={(0, a), (0, b), (1, a), (1, b), (2, a), (2, b)}</p>
 二元关系简称为关系</li>
 <li>$R$ 是有序对的集合，$&lt;x,y&gt;\in R\Leftrightarrow xRy$ 是关系的两种表示方法，表示 $x$ 与 $y$ 有 $R$ 关系</li>
 </ul>
-<p>关系的<strong>定义域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第一个元素组成的集合，称为 $R$ 的定义域，记作 $dom\ R$，即 $dom\ R={x|\exists y(&lt;x,y&gt;\in R)}$</p>
-<p>关系的<strong>值域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第二个元素组成的集合，称为 $R$ 的值域，记作 $ran\ R$，即 $ran\ R={y|\exists x(&lt;x,y&gt;\in R)}$</p>
+<p>关系的<strong>定义域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第一个元素组成的集合，称为 $R$ 的定义域，记作 $dom\ R$，即 $dom\ R=\lbrace x|\exists y(&lt;x,y&gt;\in R)\rbrace$</p>
+<p>关系的<strong>值域</strong>：设 $R$ 是 $A$ 到 $B$ 的关系，由所有 $&lt;x,y&gt;\in R$ 的第二个元素组成的集合，称为 $R$ 的值域，记作 $ran\ R$，即 $ran\ R=\lbrace y|\exists x(&lt;x,y&gt;\in R)\rbrace$</p>
 <h2 id="关系的性质">关系的性质</h2>
 <p><strong>自反性</strong>：设 $R\subseteq A\times A$，如果对于 $\forall x\in A$都有 $xRx$，则称 $R$ 是 $A$ 中的自反关系</p>
 <blockquote>
-<p>例<br>
-$A={1，2，3}$<br><br>
-对于关系：<br>
-$S1={&lt;1,1&gt;,&lt;2,2&gt;}$<br><br>
-$S2={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;}$<br><br>
-$S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
+<p>例如，$A=\lbrace 1，2，3\rbrace $，则对于关系：<br><br>
+$S1=\lbrace &lt;1,1&gt;,&lt;2,2&gt;\rbrace $，<br><br>
+$S2=\lbrace &lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;\rbrace $，<br><br>
+$S3=\lbrace &lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;\rbrace $，<br><br>
 其中 $S2、S3$ 是自反的，$S1$不是</p>
 </blockquote>
 <p><strong>反自反性</strong>：设 $R$ 为集合 $A$ 中关系，如果对于 $\forall x\in A$ 都有 $xRx$ 不成立，则称 $R$ 是 $A$ 中的反自反关系</p>
@@ -275,7 +273,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 </ul>
 <p>则称 $R’$ 是 $R$ 的自反（对称、传递）闭包，记作 $r\left(R\right),s\left(R\right),t\left(R\right)$</p>
 <h2 id="集合的划分与覆盖">集合的划分与覆盖</h2>
-<p><strong>覆盖</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi={A_1,A_2,…,A_m}$，如果</p>
+<p><strong>覆盖</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi=\lbrace A_1,A_2,…,A_m\rbrace $，如果</p>
 <ul>
 <li>
 <p>$A_i\subseteq A$ 且 $A_i\neq \phi$</p>
@@ -285,7 +283,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 <p>则称 $\Pi$ 是 $A$ 的一个覆盖</p>
 </li>
 </ul>
-<p><strong>划分</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi={A_1,A_2,…,A_m}$，如果</p>
+<p><strong>划分</strong>：给定一个非空集合 $A$ 和集合簇 $\Pi=\lbrace A_1,A_2,…,A_m\rbrace $，如果</p>
 <ul>
 <li>
 <p>$A_i\subseteq A$ 且 $A_i\neq \phi$</p>
@@ -301,11 +299,18 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
 <h2 id="三种关系">三种关系</h2>
 <h3 id="等价关系">等价关系</h3>
 <p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、对称的和传递的，则称 $R$ 是 $A$ 上的<strong>等价关系</strong></p>
-<p><strong>等价类</strong>：设 $R$ 为集合 $A$ 中等价关系，$a\in A$，由 $a$ 确定的集合 $[a]_R={x|x\in A\ \wedge &lt;a,x&gt;\in R}$，称集合 $[a]_R$ 为 $a$ 的关于 $R$ 所生成的等价类，简称 $a$ 的等价类</p>
+<p><strong>等价类</strong>：设 $R$ 为集合 $A$ 上的等价关系，$a\in A$，由 $a$ 确定的集合 $[a]_R=\lbrace x|x\in A\ \wedge &lt;a,x&gt;\in R\rbrace $，称集合 $[a]_R$ 为 $a$ 的关于 $R$ 所生成的等价类，简称 $a$ 的等价类</p>
 <p><strong>商集</strong>：$R$ 是 $A$ 上的等价关系，由 $R$ 的所有等价类构成的集合称为 $A$ 关于 $R$ 的商集，记作 $A/R$</p>
 <blockquote>
-<p>例如，$A={1,2,3,4,5,6,7}$，$R$ 是 $A$ 上的模3同余关系，则 $A/R={ [1]_R,[2]_R,[3]_R} ={ {1,4,7},{2,5},{3,6} }$</p>
+<p>例如，$A=\lbrace 1,2,3,4,5,6,7\rbrace $，$R$ 是 $A$ 上的模3同余关系，则<br><br>
+$A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 2,5\rbrace ,\lbrace 3,6\rbrace  \rbrace $</p>
 </blockquote>
+<h3 id="相容关系">相容关系</h3>
+<p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、对称的，则称 $R$ 是 $A$ 上的<strong>相容关系</strong></p>
+<p><strong>相容类</strong>：设 $r$ 为集合 $A$ 上的相容关系，$C\subseteq A$，如果对于 $C$ 中 $\forall x,y$，有 $&lt;x,y&gt;\in r$，称 $C$ 是 $r$ 的一个相容类</p>
+<p><strong>最大相容类</strong>：设 $r$ 为集合 $A$ 上的相容关系，$C$ 是 $r$ 的一个相容类，如果 $C$ 不能被其他相容类所真包含，则称 $C$ 是一个最大相容类</p>
+<h3 id="偏序关系">偏序关系</h3>
+<p>设 $R$ 为集合 $A$ 中关系，若 $R$ 是自反的、传递的和反对称的，则称 $R$ 是 $A$ 上的<strong>偏序关系</strong></p>
 
       
     </div>
@@ -356,7 +361,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-12-01 15:14:44" itemprop="dateModified" datetime="2025-12-01T15:14:44+08:00">2025-12-01</time>
+                <time title="修改时间：2025-12-02 00:15:32" itemprop="dateModified" datetime="2025-12-02T00:15:32+08:00">2025-12-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -374,7 +379,7 @@ $S3={&lt;1,1&gt;,&lt;2,2&gt;,&lt;3,3&gt;,&lt;1,2&gt;}$<br><br>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.3k</span>
+              <span>6.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -493,13 +498,13 @@ $$S_w^{-1}S_b\omega=\lambda\omega$$<br>
 由此可见，$\lambda$ 和 $\omega$ 分别是 $S_w^{-1}S_b$ 的特征根和特征向量，$S_w^{-1}S_b\omega=\lambda\omega$ 也被称为Fisher线性判别</p>
 <p>对于二分类，最优投影方向 $\omega^*=S_w^{-1}(\mu_1-\mu_2)$</p>
 <h3 id="操作">操作</h3>
-<p>对于输入数据集 $D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$，其中，任意样本 $x_i$ 为 $n$ 维向量，$y_i\in {C_1,C_2,…,C_k}$ 降维到 $r$ 维</p>
+<p>对于输入数据集 $D=\lbrace (x_1,y_1),(x_2,y_2),…,(x_m,y_m)\rbrace $，其中，任意样本 $x_i$ 为 $n$ 维向量，$y_i\in \lbrace C_1,C_2,…,C_k\rbrace $ 降维到 $r$ 维</p>
 <ul>
 <li>计算数据样本集中每个类别样本的均值</li>
 <li>计算类内散度矩阵 $S_w$ 和类间散度矩阵 $S_b$</li>
 <li>根据 $S_w^{-1}S_b\omega=\lambda\omega$ 求解 $S_w^{-1}S_b$ 的特征值和特征向量，选取前 $r$ 个最大的特征值和对应的特征向量 $\omega_1,\omega_2,…,\omega_r$，得到投影矩阵 $W$</li>
 <li>对样本集中的每一个样本特征 $x_i$，转化为新的样本 $z_i=W^Tx_i$</li>
-<li>得到输出样本集 $D’={(z_1,y_1),(z_2,y_2),…,(z_m,y_m)}$</li>
+<li>得到输出样本集 $D’=\lbrace (z_1,y_1),(z_2,y_2),…,(z_m,y_m)\rbrace $</li>
 </ul>
 <blockquote>
 <p>LDA与PCA（主成分分析）的区别：</p>
@@ -515,7 +520,7 @@ $$S_w^{-1}S_b\omega=\lambda\omega$$<br>
 <strong>Ada Boost <strong>是一种常见的机器学习集成学习方法，属于 Boosting 算法的一种。它通过</strong>结合多个弱分类器</strong>（如决策树）来构建一个强分类器，从而提高模型的预测精度。</p>
 <p>Ada Boost 的<strong>核心思想</strong>是：每次迭代训练时，增加对分类错误样本的关注权重，使后续的分类器更倾向于纠正这些错误分类。最终，所有弱分类器的结果通过加权投票的方式组合成一个强分类器。</p>
 <h3 id="操作-2">操作</h3>
-<p>给定一个包含 $N$ 个标注数据的训练数据集 $\Gamma$，$\Gamma ={(x_1,y_1),(x_2,y_2),…,(x_N,y_N)}$，其中实例 $x_i \in X$，而实例空间 $X \subset R^n$，$y_i$ 属于标记集合 $Y={-1,1}$</p>
+<p>给定一个包含 $N$ 个标注数据的训练数据集 $\Gamma$，$\Gamma =\lbrace (x_1,y_1),(x_2,y_2),…,(x_N,y_N)\rbrace $，其中实例 $x_i \in X$，而实例空间 $X \subset R^n$，$y_i$ 属于标记集合 $Y=\lbrace -1,1\rbrace $</p>
 <ol>
 <li>
 <p>首先，初始化训练数据的权值分布。每一个训练样本最开始时都被赋予相同的权值：<br>
@@ -526,7 +531,7 @@ $$D_1=(w_{11},…,w_{1i},…w_{1N})，w_{1i}=\frac{1}{N}(1\leq i\leq N)$$</p>
 <ol>
 <li>
 <p>使用具有权值分布 $D_m$ 的训练数据集学习，得到第 $m$ 个基分类器（弱分类器）$G_m$<br>
-$$G_m(x):X\rightarrow{-1,1}$$</p>
+$$G_m(x):X\rightarrow\lbrace -1,1\rbrace $$</p>
 </li>
 <li>
 <p>计算 $G_m(x)$ 在训练数据集上的分类误差：<br>
@@ -560,7 +565,7 @@ $$G(x)=sign(f(x))=sign(\sum_{i=1}^M\alpha_mG_m(x))$$</p>
 <ol>
 <li>初始化聚类中心：随机选择 $k$ 个样本作为初始中心
 <ul>
-<li>初始化k个聚类中心 $c={c_1,c_2,…,c_k}，c_j\in R^m$</li>
+<li>初始化k个聚类中心 $c=\lbrace c_1,c_2,…,c_k\rbrace ，c_j\in R^m$</li>
 <li>每个聚类中心 $c_j$ 所在集合记为 $G_j$</li>
 </ul>
 </li>
