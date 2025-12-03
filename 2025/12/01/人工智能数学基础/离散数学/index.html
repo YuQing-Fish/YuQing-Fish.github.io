@@ -28,7 +28,7 @@
 <meta property="og:description" content="集合论 基础概念 略 集合运算与定律 略 笛卡尔积 笛卡尔乘积，又称直积，是数学中两个集合X和Y的所有可能有序对组成的集合，表达式为 $X×Y$，不满足交换律和结合律，但对并集与交集运算满足分配律 笛卡尔积的符号化为： $$A×B&#x3D;\lbrace (x,y)|x\in A\wedge y\in B\rbrace $$  假设 A&#x3D;{a,b}, B&#x3D;{0,1,2}，则： A×B&#x3D;{(a, 0), (">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-01T11:22:23.000Z">
-<meta property="article:modified_time" content="2025-12-02T11:44:11.739Z">
+<meta property="article:modified_time" content="2025-12-03T03:20:02.826Z">
 <meta property="article:author" content="Fish">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-12-02 19:44:11" itemprop="dateModified" datetime="2025-12-02T19:44:11+08:00">2025-12-02</time>
+                <time title="修改时间：2025-12-03 11:20:02" itemprop="dateModified" datetime="2025-12-03T11:20:02+08:00">2025-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,14 +198,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>5.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -318,6 +318,194 @@ $A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 
 </blockquote>
 <p>如果集合 $A$ 上有偏序关系 $R$，则称 $A$ 为<strong>偏序集</strong>，用序偶 $&lt;A,R&gt;$ 表示。若 $&lt;x,y&gt;\in R$，常记作 $x\preceq y$</p>
 <h1>命题逻辑</h1>
+<h2 id="命题">命题</h2>
+<h3 id="定义">定义</h3>
+<ul>
+<li>命题，是指具有<strong>唯一真值的陈述句</strong></li>
+<li>命题只有两种可能的真值：真和假，且二者只能居其一。由于命题只有两种真值，也称这种逻辑为<strong>二值逻辑</strong></li>
+</ul>
+<h3 id="分类">分类</h3>
+<p><strong>原子命题</strong>：也叫简单命题，如果一个命题不包含其他更简单的命题，则称为原子命题<br><br>
+<strong>复合命题</strong>：由原子命题、命题联结词和圆括号组成</p>
+<h3 id="命题变元与命题常元">命题变元与命题常元</h3>
+<p><strong>命题常元</strong>：也叫命题定元、命题常项，指在命题中具有<strong>固定逻辑含义</strong>的部分，通常由逻辑联结词构成<br><br>
+<strong>命题变元</strong>：也叫句子变元，指在命题中可以变化的部分，通常用字母（如 $p、q、r$ 等）表示</p>
+<h2 id="命题联结词">命题联结词</h2>
+<p>也叫逻辑运算符，包括否定、合取、析取、条件和双条件联结词</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命题联结词</th>
+<th style="text-align:center">汉语表示</th>
+<th style="text-align:center">符号表示</th>
+<th style="text-align:center">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">否定联结词</td>
+<td style="text-align:center">非</td>
+<td style="text-align:center">$\lnot$</td>
+<td style="text-align:center">$\lnot P$</td>
+</tr>
+<tr>
+<td style="text-align:center">合取联结词</td>
+<td style="text-align:center">与</td>
+<td style="text-align:center">$\wedge$</td>
+<td style="text-align:center">$P\wedge Q$</td>
+</tr>
+<tr>
+<td style="text-align:center">析取联结词</td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">$\vee$</td>
+<td style="text-align:center">$P\vee Q$</td>
+</tr>
+<tr>
+<td style="text-align:center">条件联结词</td>
+<td style="text-align:center">若…则…</td>
+<td style="text-align:center">$\rightarrow$</td>
+<td style="text-align:center">$P\rightarrow Q$</td>
+</tr>
+<tr>
+<td style="text-align:center">双条件联结词</td>
+<td style="text-align:center">当且仅当</td>
+<td style="text-align:center">$\leftrightarrow$</td>
+<td style="text-align:center">$P\leftrightarrow Q$</td>
+</tr>
+</tbody>
+</table>
+<p>优先级：$\lnot$ 优先级最高，$\wedge,\vee$ 次之，$\rightarrow,\leftrightarrow$ 优先级最低</p>
+<h3 id="真值表">真值表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$P$</th>
+<th style="text-align:center">$Q$</th>
+<th style="text-align:center">$\lnot P$</th>
+<th style="text-align:center">$P\wedge Q$</th>
+<th style="text-align:center">$P\vee Q$</th>
+<th style="text-align:center">$P\rightarrow Q$</th>
+<th style="text-align:center">$P\leftrightarrow Q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+</tr>
+<tr>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$F$</td>
+</tr>
+<tr>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+</tr>
+<tr>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$F$</td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center">$T$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="逻辑等价">逻辑等价</h2>
+<p>$A,B$ 为两个命题公式，$P_1,P_2,…,P_n$ 为所有出现在 $A,B$ 中的命题变元，但 $P_i,i=1,2,…,n$ 不一定都同时出现在 $A$ 和 $B$ 中。若对于 $P_1,P_2,…,P_n$ 的任意一组赋值，$A$ 和 $B$ 的真值都相同，则称 $A$ 和 $B$ 逻辑等价，记作 $A\Leftrightarrow B$</p>
+<p>基本等价关系：</p>
+<ul>
+<li>双重否定律：$P\Leftrightarrow \lnot\lnot P$</li>
+<li>德·摩根律：$\lnot(P\land Q)\Leftrightarrow\lnot P\lor\lnot Q$</li>
+<li>条件转化律：$P\rightarrow Q\Leftrightarrow\lnot P\lor Q$</li>
+<li>假言易位：$P\rightarrow Q\Leftrightarrow\lnot Q\rightarrow\lnot P$</li>
+<li>等价否定：$P\leftrightarrow Q\Leftrightarrow\lnot P\leftrightarrow \lnot Q$</li>
+</ul>
+<h2 id="范式">范式</h2>
+<p><strong>析取范式</strong>：一个命题公式称为析取范式，当且仅当它具有形式：<br>
+$$A_1\vee A_2\vee …\vee A_n$$<br>
+$;;;;;;;;$其中，$A_1,A_2,…,A_n$ 都是由命题变元或其否定所组成的合取式<br><br>
+$;;;;;;;;$例如，$(\lnot P\wedge Q\wedge \lnot R)\vee(P\wedge \lnot Q\wedge R)\vee Q$就是一个析取范式</p>
+<p><strong>合取范式</strong>：一个命题公式称为合取范式，当且仅当它具有形式：<br>
+$$A_1\wedge A_2\wedge …\wedge A_n$$<br>
+$;;;;;;;;$其中，$A_1,A_2,…,A_n$ 都是由命题变元或其否定所组成的析取式<br></p>
+<blockquote>
+<p>合取范式和合取式的区别：<br>
+合取式是由若干个命题变元仅由联结词 ${\lnot,\land}$ 所组成的命题公式<br>
+而合取范式是由多个析取式通过合取联结词 $(\land)$ 连接而成</p>
+</blockquote>
+<p><strong>范式存在定理：任一命题公式都存在着与之等值的析取范式与合取范式</strong></p>
+<h2 id="命题逻辑推理规则：">命题逻辑推理规则：</h2>
+<ul>
+<li>假言推理：$\alpha \rightarrow \beta,\alpha \Rightarrow \beta$</li>
+<li>与消解：$\alpha_1\wedge\alpha_2\wedge…\wedge\alpha_n\Rightarrow\alpha_i(1\leq i\leq n)$</li>
+<li>与导入：$\alpha_1,\alpha_2,…\alpha_n\Rightarrow\alpha_1\wedge\alpha_2\wedge…\wedge\alpha_n$</li>
+<li>双重否定：$\lnot\lnot\alpha\Rightarrow\alpha$</li>
+<li>单项消解或单项归结：$\alpha\vee\beta,\lnot\beta\Rightarrow\alpha$</li>
+<li>消解或归结：$\alpha\vee\beta,\lnot\beta\vee\gamma\Rightarrow\alpha\vee\gamma$</li>
+</ul>
+<h1>谓词逻辑</h1>
+<h2 id="核心概念">核心概念</h2>
+<p><strong>个体</strong>：原子命题中，所<strong>描述的对象</strong>称为个体</p>
+<ul>
+<li>个体常元：具体或特定的个体，用常量符号表示，如“张三”“1”</li>
+<li>个体变元：抽象或泛指的个体，用变量符号表示，如 $x、y、z$</li>
+<li>个体变元的论述范围称为个体域或论域</li>
+</ul>
+<p><strong>谓词</strong>：原子命题中，用以描述<strong>个体性质</strong>或<strong>个体间关系</strong>的部分，称为谓词</p>
+<ul>
+<li>包含一个参数的谓词称为一元谓词，表示个体性质</li>
+<li>包含多个参数的谓词称为多元谓词，表示个体之间的多元关系</li>
+<li>n元谓词，就有 $n$ 个变元。命题可以视为 0 元谓词</li>
+<li>
+<blockquote>
+<p>例：$P(x):x$ 是质数，表示某个数是否是质数；$Father(x,y):x$ 是 $y$ 的父亲</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>量词</strong>：<strong>全称量词、存在量词</strong>  ，量词所约束的范围称为该量词的<strong>辖域</strong></p>
+<ul>
+<li><strong>指导变元</strong>：$\forall x$ 和 $\exists x$ 中的 $x$ 称为指导变元/作用变元，仅是一个符号，用于表记量词对哪个变元有作用。指导变元不视为变元，也不视为变元的一次出现</li>
+<li><strong>约束变元</strong>：在全称量词或存在量词的<strong>约束条件下</strong>的变量符号称为约束变元，如 $\forall x$和 $\exists x$ 中的 $x$</li>
+<li><strong>自由变元</strong>：<strong>不受</strong>全称量词或存在量词<strong>约束</strong>的变量符号称为自由变元，如 $P(x)$ 中的 $x$</li>
+<li>
+<ul>
+<li>自由变元既可以存在于量词的约束范围之内，也可以存在于量词的约束范围之外</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>在约束变元相同的情况下，量词的运算满足分配律</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>当公式中存在多个量词时，若多个量词都是全称量词或者都是存在量词，则量词的位置可以互换；<br>
+若多个量词中既有全称量词又有存在量词，则量词的位置不可以随意互换。</li>
+</ul>
+</li>
+</ul>
+<h2 id="谓词逻辑推理规则">谓词逻辑推理规则</h2>
+<p><strong>全称量词消去</strong>（US）规则：$(\forall x)A(x)\Rightarrow A©$，其中c为任意个体常元<br><br>
+<strong>存在量词消去</strong>（ES）规则：$(\exists x)A(x)\Rightarrow A©$，其中c为特定个体常元<br><br>
+<strong>全称量词产生</strong>（UG）规则：$A(y)\Rightarrow (\exists x)A(x)$，其中 $A(y)$ 对于 $y$ 的任意取值都成立<br><br>
+<strong>存在量词产生</strong>（EG）规则：$A©\Rightarrow (\exists x)A(x)$，其中c为任意个体常元</p>
 
     </div>
 
@@ -336,7 +524,10 @@ $A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 
     <a href="/2025/11/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%95%E8%AE%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="机器学习">
       <i class="fa fa-chevron-left"></i> 机器学习
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2025/12/03/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" rel="next" title="post">
+      post <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -395,7 +586,7 @@ $A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">集合论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E4%B8%8E%E5%AE%9A%E5%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">集合运算与定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">1.3.</span> <span class="nav-text">笛卡尔积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">关系的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">关系的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">运算性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">关系的闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%88%92%E5%88%86%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="nav-number">2.5.</span> <span class="nav-text">集合的划分与覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.</span> <span class="nav-text">三种关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.1.</span> <span class="nav-text">等价关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%AE%B9%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.2.</span> <span class="nav-text">相容关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.3.</span> <span class="nav-text">偏序关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">命题逻辑</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">集合论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E4%B8%8E%E5%AE%9A%E5%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">集合运算与定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-number">1.3.</span> <span class="nav-text">笛卡尔积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">关系的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">关系的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">运算性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">关系的闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%88%92%E5%88%86%E4%B8%8E%E8%A6%86%E7%9B%96"><span class="nav-number">2.5.</span> <span class="nav-text">集合的划分与覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.</span> <span class="nav-text">三种关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.1.</span> <span class="nav-text">等价关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%AE%B9%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.2.</span> <span class="nav-text">相容关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB"><span class="nav-number">2.6.3.</span> <span class="nav-text">偏序关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">命题逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">命题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">3.1.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E9%A2%98%E5%8F%98%E5%85%83%E4%B8%8E%E5%91%BD%E9%A2%98%E5%B8%B8%E5%85%83"><span class="nav-number">3.1.3.</span> <span class="nav-text">命题变元与命题常元</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E9%A2%98%E8%81%94%E7%BB%93%E8%AF%8D"><span class="nav-number">3.2.</span> <span class="nav-text">命题联结词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="nav-number">3.2.1.</span> <span class="nav-text">真值表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%AD%89%E4%BB%B7"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑等价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">范式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99%EF%BC%9A"><span class="nav-number">3.5.</span> <span class="nav-text">命题逻辑推理规则：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">谓词逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">4.1.</span> <span class="nav-text">核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99"><span class="nav-number">4.2.</span> <span class="nav-text">谓词逻辑推理规则</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -409,7 +600,7 @@ $A/R=\lbrace  [1]_R,[2]_R,[3]_R\rbrace  =\lbrace  \lbrace 1,4,7\rbrace ,\lbrace 
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
