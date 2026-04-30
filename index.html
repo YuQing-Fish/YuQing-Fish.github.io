@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-04-30 14:44:01" itemprop="dateModified" datetime="2026-04-30T14:44:01+08:00">2026-04-30</time>
+                <time title="修改时间：2026-04-30 15:17:07" itemprop="dateModified" datetime="2026-04-30T15:17:07+08:00">2026-04-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,8 +223,8 @@
 </ul>
 <h2 id="Y电路与-Delta-电路间的变换">Y电路与$\Delta$电路间的变换</h2>
 <div align="center"><img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image-1.png" width="220" height="200"></div>
-<p>$$\Delta \rightarrow Y : R_Y=\frac{相邻R_{\Delta}乘积}{\sum R_\Delta}$$<br>
-$$Y \rightarrow \Delta : R_\Delta=\frac{R_Y两两乘积之和}{对面的R_Y}$$</p>
+<p>$$\Delta \rightarrow Y : R_Y=\frac{相邻R_{\Delta}乘积}{\sum R_\Delta}$$</p>
+<p>$$Y \rightarrow \Delta : R_\Delta=\frac{R_Y两两乘积之和}{对面的R_Y}$$</p>
 <h2 id="叠加定理">叠加定理</h2>
 <ul>
 <li>线性电路中元件两端电压（或流经元件的电流）是每个独立源单独作用下在该元件两端的产生电压（或流经该元件的电流）的代数和</li>
@@ -252,8 +252,8 @@ $$Y \rightarrow \Delta : R_\Delta=\frac{R_Y两两乘积之和}{对面的R_Y}$$</
 <p>$RL全响应: i(t)=i(\infty)+[i(0)-i(\infty)]e^{-t/\tau}$</p>
 <h2 id="二阶电路响应">二阶电路响应</h2>
 <p>无源串联RLC电路：<br>
-$$\alpha =\frac{R}{2L}，\omega_0=\frac{1}{\sqrt{LC}}，s_{1,2}=-\alpha \pm \sqrt{\alpha^2-\omega_0^2}，\omega_d=\sqrt{\omega_0^2-\alpha^2}$$<br>
-$$i(t)=\begin{cases}A_1e^{s_1t}+A_2e^{s^2t}\ ,&amp;过阻尼情况(\alpha \gt \omega_0)\\(A_1t+A_2)e^{-\alpha t}\ ,&amp;临界阻尼情况(\alpha =\omega_0)\\e^{-\alpha t}(B_1\cos{\omega_dt}+B_2\sin\omega_dt)\ ,&amp;欠阻尼情况(\alpha \lt \omega_0) \end{cases}$$<br>
+$$\alpha =\frac{R}{2L}，\omega_0=\frac{1}{\sqrt{LC}}，s_{1,2}=-\alpha \pm \sqrt{\alpha^2-\omega_0^2}，\omega_d=\sqrt{\omega_0^2-\alpha^2}$$</p>
+<p>$$i(t)=\begin{cases}A_1e^{s_1t}+A_2e^{s^2t}\ ,&amp;过阻尼情况(\alpha \gt \omega_0)\\(A_1t+A_2)e^{-\alpha t}\ ,&amp;临界阻尼情况(\alpha =\omega_0)\\e^{-\alpha t}(B_1\cos{\omega_dt}+B_2\sin\omega_dt)\ ,&amp;欠阻尼情况(\alpha \lt \omega_0) \end{cases}$$<br>
 无源并联RLC电路：<br>
 $$\alpha =\frac{1}{2RC}，\omega_0=\frac{1}{\sqrt{LC}}$$</p>
 <h2 id="交流功率分析">交流功率分析</h2>
@@ -264,13 +264,11 @@ $$\alpha =\frac{1}{2RC}，\omega_0=\frac{1}{\sqrt{LC}}$$</p>
 <h3 id="有效值">有效值</h3>
 <p>$$I_{rms}=\sqrt{\frac{1}{T}\int_0^Ti^2dt}=\frac{I_m}{\sqrt{2}}，V_{rms}=\frac{V_m}{\sqrt{2}}$$</p>
 <h3 id="视在功率与功率因数">视在功率与功率因数</h3>
-<p>$$视在功率\ S=V_{rms}I_{rms}\ (伏安\ V\cdot I)$$<br>
-$$功率因数\ pf=\frac{P}{S}=\cos(\theta_v-\theta_i)$$</p>
+<p>$$视在功率\ S=V_{rms}I_{rms}\ (伏安\ V\cdot I)$$</p>
+<p>$$功率因数\ pf=\frac{P}{S}=\cos(\theta_v-\theta_i)$$</p>
 <h3 id="复功率">复功率</h3>
-<p>$$<br>
-\boldsymbol{S}=\frac{1}{2}\boldsymbol{V}\boldsymbol{I}^<em>=\boldsymbol{V}<em>{rms}\boldsymbol{I}</em>{rms}^</em>=I_{rms}^2\boldsymbol{Z}=P+jQ<br>
-$$</p>
-<p>$$有功功率（平均功率）P=Re(\boldsymbol S)=I_{rms}^2R$$<br>
+<p>$$\boldsymbol{S}=\frac{1}{2}\boldsymbol{V}\boldsymbol{I}^*=\boldsymbol V_{rms}\boldsymbol I_{rms}=I_{rms}^2\boldsymbol{Z}=P+jQ$$<br>
+$$有功功率（平均功率）P=Re(\boldsymbol{S})=I_{rms}^2R$$<br>
 $$无功功率（正交功率）Q=Im(\boldsymbol S)=I_{rms}^2X$$</p>
 
       
