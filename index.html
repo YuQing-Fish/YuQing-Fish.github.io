@@ -170,10 +170,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2026-04-28 13:19:39 / 修改时间：18:02:56" itemprop="dateCreated datePublished" datetime="2026-04-28T13:19:39+08:00">2026-04-28</time>
+              <time title="创建时间：2026-04-28 13:19:39" itemprop="dateCreated datePublished" datetime="2026-04-28T13:19:39+08:00">2026-04-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-04-30 13:45:04" itemprop="dateModified" datetime="2026-04-30T13:45:04+08:00">2026-04-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -190,7 +196,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -209,13 +215,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image.png" width="200" height="200" align="center">
+          <h2 id="关联参考方向">关联参考方向</h2>
+<div align="center"><img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image.png" width="200" height="200"></div>
 <ul>
 <li>当电流流入元件的电压正极时，满足<strong>关联参考方向</strong>，p = +vi</li>
 <li>电流流入元件的电压负极时，则有p = -vi</li>
 </ul>
 <h2 id="Y电路与-Delta-电路间的变换">Y电路与$\Delta$电路间的变换</h2>
-<img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image-1.png" width="220" height="200" align="center">
+<div align="center"><img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image-1.png" width="220" height="200"></div>
 <p>$$\Delta \rightarrow Y : R_Y=\frac{相邻R_{\Delta}乘积}{\sum R_\Delta}$$<br>
 $$Y \rightarrow \Delta : R_\Delta=\frac{R_Y两两乘积之和}{对面的R_Y}$$</p>
 <h2 id="叠加定理">叠加定理</h2>
@@ -225,7 +232,7 @@ $$Y \rightarrow \Delta : R_\Delta=\frac{R_Y两两乘积之和}{对面的R_Y}$$</
 <li>受控源始终保留</li>
 </ul>
 <h2 id="电源变换">电源变换</h2>
-<img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image-2.png" width="300" height="150" align="center">
+<div align="center"><img src="/2026/04/28/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/image-2.png" width="300" height="150"></div>
 <p>$$v_S=i_SR\ 时，两电路等效$$</p>
 <h2 id="戴维南定理-诺顿定理">戴维南定理 诺顿定理</h2>
 <ul>
@@ -249,6 +256,16 @@ $$\alpha =\frac{R}{2L}，\omega_0=\frac{1}{\sqrt{LC}}，s_{1,2}=-\alpha \pm \sqr
 $$i(t)=\begin{cases}A_1e^{s_1t}+A_2e^{s^2t}\ ,&amp;过阻尼情况(\alpha \gt \omega_0)\\(A_1t+A_2)e^{-\alpha t}\ ,&amp;临界阻尼情况(\alpha =\omega_0)\\e^{-\alpha t}(B_1\cos{\omega_dt}+B_2\sin\omega_dt)\ ,&amp;欠阻尼情况(\alpha \lt \omega_0) \end{cases}$$<br>
 无源并联RLC电路：<br>
 $$\alpha =\frac{1}{2RC}，\omega_0=\frac{1}{\sqrt{LC}}$$</p>
+<h2 id="交流功率分析">交流功率分析</h2>
+<h3 id="平均功率">平均功率</h3>
+<p>$$P=\frac{1}{2}Re[VI^*]=\frac{1}{2}V_mI_m\cos(\theta_v-\theta_i)$$</p>
+<h3 id="最大平均功率传输">最大平均功率传输</h3>
+<p>$$当\ R_L=R_{Th}\ 且\ X_L=-X_{Th}\ 时，P_{max}=\frac{|V_{Th}|^2}{8R_{Th}}$$</p>
+<h3 id="有效值">有效值</h3>
+<p>$$I_{rms}=\sqrt{\frac{1}{T}\int_0^Ti^2dt}=\frac{I_m}{\sqrt{2}}，V_{rms}=\frac{V_m}{\sqrt{2}}$$</p>
+<h3 id="视在功率与功率因数">视在功率与功率因数</h3>
+<p>$$视在功率\ S=V_{rms}I_{rms}\ (伏安\ V\cdot I)$$<br>
+$$功率因数\ pf=\frac{P}{S}=\cos(\theta_v-\theta_i)$$</p>
 
       
     </div>
