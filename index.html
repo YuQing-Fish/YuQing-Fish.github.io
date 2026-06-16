@@ -170,10 +170,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2026-06-15 20:02:10 / 修改时间：20:41:09" itemprop="dateCreated datePublished" datetime="2026-06-15T20:02:10+08:00">2026-06-15</time>
+              <time title="创建时间：2026-06-15 20:02:10" itemprop="dateCreated datePublished" datetime="2026-06-15T20:02:10+08:00">2026-06-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-06-16 21:25:25" itemprop="dateModified" datetime="2026-06-16T21:25:25+08:00">2026-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -190,7 +196,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>131</span>
+              <span>417</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -216,6 +222,19 @@
 <p>式中，$I_s$ 为反向饱和电流</p>
 </blockquote>
 <p>动态电阻：$r_d=\frac{V_T}{I_{DQ}}$</p>
+<h2 id="三极管">三极管</h2>
+<p>当 BJT 工作在放大区时，发射结电压<strong>正偏</strong>；集电结电压<strong>反偏</strong>。</p>
+<p>根据特性曲线，双极型晶体管可以分为三个区：<strong>放大区</strong>、<strong>饱和区</strong>、<strong>截止区</strong></p>
+<p>在用 NPN 型晶体管的共射放大电路时，输出波形出现了顶部失真，这是<strong>截止失真</strong></p>
+<h4 id="截止失真与饱和失真：">截止失真与饱和失真：</h4>
+<div align="center"><img src="/2026/06/15/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%AE%9E%E9%AA%8C/%E6%A8%A1%E7%94%B5/image.png" width="400" height="200"></div>
+<h4 id="BJT-一般解题流程：">BJT 一般解题流程：</h4>
+<ol>
+<li>确定静态工作点：$I_{BQ}、I_{CQ}、I_{CEQ}$</li>
+<li>求小信号等效电路参数：$r_{\pi}=r_{be}=\frac{\beta V_T}{I_{CQ}}、g_m=\frac{I_{CQ}}{V_T}\Rightarrow g_mr_{\pi}=\beta、I_c=g_mv_{\pi}$</li>
+<li>求小信号电压增益/输入、输出电阻</li>
+</ol>
+<h2 id="场效应管">场效应管</h2>
 
       
     </div>
