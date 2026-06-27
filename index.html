@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-26 22:43:01" itemprop="dateModified" datetime="2026-06-26T22:43:01+08:00">2026-06-26</time>
+                <time title="修改时间：2026-06-27 09:34:44" itemprop="dateModified" datetime="2026-06-27T09:34:44+08:00">2026-06-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,7 +196,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -297,6 +297,17 @@ $\tau_{max}=\frac{\sigma_1-\sigma_3}{2}$</p>
 <li>计算临界应力： $\lambda\geq\lambda_p$ 时，$\sigma_{cr}=\frac{\pi^2E}{\lambda^2}$； $\lambda_s\leq\lambda\lt\lambda_p$ 时，$\sigma_{cr}=a-b\lambda$； $\lambda\lt\lambda_s$ 时，$\sigma_{cr}=\sigma_s$</li>
 <li>工作安全因数 $n=\frac{F_{cr}}{F}\geq n_{st}$， $n_{st}$为稳定安全系数</li>
 </ol>
+<h4 id="冲击问题">冲击问题</h4>
+<p>解题步骤：</p>
+<ol>
+<li>求出静位移 $\Delta_{st}$</li>
+<li>求出动荷因数 $K_d$： 竖直：$K_d=1+\sqrt{1+\frac{2h}{\Delta_{st}}}$； 水平：$K_d=\sqrt{\frac{v^2}{g\Delta_{st}}}$</li>
+<li>求出动载荷 $P_d=K_dP$，动位移 $\Delta_d=K_d\Delta_{st}$，动应力 $\sigma_d=K_d\sigma$</li>
+</ol>
+<h4 id="交变应力">交变应力</h4>
+<p>应力比： $r=\frac{\sigma_{min}}{\sigma_{max}}$<br><br>
+应力幅： $\Delta\sigma=\sigma_{max}-\sigma_{min}$<br><br>
+平均应力： $\sigma_m=\frac{1}{2}(\sigma_{max}+\sigma_{min})$</p>
 
       
     </div>
