@@ -357,7 +357,7 @@ $\tau_{max}=\frac{\sigma_1-\sigma_3}{2}$</p>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-28 10:38:32" itemprop="dateModified" datetime="2026-06-28T10:38:32+08:00">2026-06-28</time>
+                <time title="修改时间：2026-06-28 19:14:45" itemprop="dateModified" datetime="2026-06-28T19:14:45+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -375,7 +375,7 @@ $\tau_{max}=\frac{\sigma_1-\sigma_3}{2}$</p>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>356</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -394,7 +394,7 @@ $\tau_{max}=\frac{\sigma_1-\sigma_3}{2}$</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="基本概念">基本概念</h2>
+          <h2 id="绪论">绪论</h2>
 <p>压力：$~$<br><br>
   $p$ 绝对压力 (absolute pressure)<br><br>
   $p_b$ 当地大气压 (barometric / atmospheric pressure)<br><br>
@@ -409,13 +409,71 @@ $循环经济性指标=\frac{循环得到的收益}{循环付出的代价}$<br><
 <div style="display: flex; gap: 20px;">
   <figure style="margin: 0; text-align: center;">
     <figcaption style="font-weight: bold; margin-bottom: 5px;">【正向循环】</figcaption>
-    <img src="/2026/06/15/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image.png" style="width: 100px;">
+    <img src="/2026/06/15/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image.png" style="width: 200px;">
   </figure>
   <figure style="margin: 0; text-align: center;">
     <figcaption style="font-weight: bold; margin-bottom: 5px;">【逆向循环】</figcaption>
-    <img src="/2026/06/15/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image1.png" style="width: 100px;">
+    <img src="/2026/06/15/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image1.png" style="width: 200px;">
   </figure>
 </div>
+<p>热效率：$\eta_t=\frac{w_{net}}{q_1}=\frac{q_1-q_2}{q_1}$<br><br>
+制冷系数：$\varepsilon=\frac{q_2}{w_{net}}$， 热泵系数：$\varepsilon’=\frac{q_1}{w_{net}}$</p>
+<h2 id="热力学第一定律">热力学第一定律</h2>
+<p>热力学第一定律：能量守恒与转换定律在热现象中的应用<br>
+$$进入系统的能量\ Q-离开系统的能量\ W=系统中储存能量的增加\ \Delta U$$<br>
+$$Q=\Delta U+W$$</p>
+<p>稳定流动能量方程：<br>
+$$q=\Delta h+\frac{1}{2}\Delta c^2_f+g\Delta z+w_i$$</p>
+<p>由 $h=u+pv$，将方程改写为 $q-\Delta u=\Delta(pv)+\underline{\frac{1}{2}\Delta c^2_f+g\Delta z+w_i}=\Delta(pv)+w_t$，则技术功：<br>
+$$w_t=-\int vdp$$<br>
+  工质压力降低时，$w_t&lt;0$，工质对机器做功；反之机器对工质做功</p>
+<h2 id="理想气体">理想气体</h2>
+<p>理想气体状态方程：<br>
+$$<br>
+pv=R_gT\Rightarrow<br>
+\begin{cases}<br>
+pV=mR_gT,&amp;m\ kg\<br>
+pV=nRT,&amp;n\ mol\<br>
+pV=RT,&amp;1\ mol<br>
+\end{cases}<br>
+$$<br>
+气体常数 $R_g=\frac{R}{M}$</p>
+<p>比热容：$c=\frac{\delta q}{dT}$<br><br>
+定容比热容：<br>
+$$c_V=(\frac{\delta q}{dT})_v=(\frac{du+pdv}{dT})_v=\frac{d u}{dT}$$<br>
+定压比热容：<br>
+$$c_p=(\frac{\delta q}{dT})_p=(\frac{dh-vdp}{dT})_p=\frac{dh}{dT}$$<br>
+迈耶公式：<br>
+$$c_p-c_v=\frac{d}{dT}(R_gT)=R_g$$<br>
+比热容比：<br>
+$$\gamma=\frac{c_p}{c_V}$$<br>
+则：<br>
+$$c_p=\frac{\gamma}{\gamma-1}R_g\ ,\ \ \ c_V=\frac{1}{\gamma-1}R_g$$</p>
+<p>定值比热容比：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">单原子气体</th>
+<th style="text-align:center">双原子气体</th>
+<th style="text-align:center">多原子气体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_{V,m}$</td>
+<td style="text-align:center">$\frac{3}{2}R$</td>
+<td style="text-align:center">$\frac{5}{2}R$</td>
+<td style="text-align:center">$\frac{7}{2}R$</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_{p,m}$</td>
+<td style="text-align:center">$\frac{5}{2}R$</td>
+<td style="text-align:center">$\frac{7}{2}R$</td>
+<td style="text-align:center">$\frac{9}{2}R$</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
