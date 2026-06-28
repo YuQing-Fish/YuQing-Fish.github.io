@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-28 19:35:54" itemprop="dateModified" datetime="2026-06-28T19:35:54+08:00">2026-06-28</time>
+                <time title="修改时间：2026-06-28 22:30:52" itemprop="dateModified" datetime="2026-06-28T22:30:52+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,14 +196,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -237,8 +237,8 @@ $循环经济性指标=\frac{循环得到的收益}{循环付出的代价}$<br><
     <img src="/2026/06/27/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image1.png" style="width: 200px;">
   </figure>
 </div>
-<p>热效率：$\eta_t=\frac{w_{net}}{q_1}=\frac{q_1-q_2}{q_1}$<br><br>
-制冷系数：$\varepsilon=\frac{q_2}{w_{net}}$， 热泵系数：$\varepsilon’=\frac{q_1}{w_{net}}$</p>
+<p>$$热效率：\eta_t=\frac{w_{net}}{q_1}=\frac{q_1-q_2}{q_1}$$<br>
+$$制冷系数：\varepsilon=\frac{q_2}{w_{net}}\ ,\ \ \ 热泵系数：\varepsilon’=\frac{q_1}{w_{net}}$$</p>
 <h2 id="热力学第一定律">热力学第一定律</h2>
 <p>热力学第一定律：能量守恒与转换定律在热现象中的应用<br>
 $$进入系统的能量\ Q-离开系统的能量\ W=系统中储存能量的增加\ \Delta U$$<br>
@@ -249,8 +249,8 @@ $$q=\Delta h+\frac{1}{2}\Delta c^2_f+g\Delta z+w_i$$</p>
 $$w_t=-\int vdp$$<br>
   工质压力降低时，$w_t&lt;0$，工质对机器做功；反之机器对工质做功</p>
 <h2 id="理想气体">理想气体</h2>
-<p>理想气体状态方程：<br>
-$$<br>
+<h4 id="理想气体状态方程：">理想气体状态方程：</h4>
+<p>$$<br>
 pv=R_gT\Rightarrow<br>
 \begin{cases}<br>
 pV=mR_gT,&amp;m\ kg\<br>
@@ -259,8 +259,8 @@ pV=RT,&amp;1\ mol<br>
 \end{cases}<br>
 $$</p>
 <p>气体常数 $R_g=\frac{R}{M}$</p>
-<p>比热容：$c=\frac{\delta q}{dT}$<br><br>
-定容比热容：<br>
+<h4 id="比热容：-c-frac-delta-q-dT-br">比热容：$c=\frac{\delta q}{dT}$<br></h4>
+<p>定容比热容：<br>
 $$c_V=(\frac{\delta q}{dT})_v=(\frac{du+pdv}{dT})_v=\frac{d u}{dT}$$<br>
 定压比热容：<br>
 $$c_p=(\frac{\delta q}{dT})_p=(\frac{dh-vdp}{dT})_p=\frac{dh}{dT}$$<br>
@@ -292,6 +292,120 @@ $$c_p=\frac{\gamma}{\gamma-1}R_g\ ,\ \ \ c_V=\frac{1}{\gamma-1}R_g$$</p>
 <td style="text-align:center">$\frac{5}{2}R$</td>
 <td style="text-align:center">$\frac{7}{2}R$</td>
 <td style="text-align:center">$\frac{9}{2}R$</td>
+</tr>
+</tbody>
+</table>
+<h4 id="热力学能、焓和熵">热力学能、焓和熵</h4>
+<p>热力学能：<br>
+$$\Delta u=\int_{T_1}^{T_2}c_VdT=c_v(T_2-T_1)$$<br>
+焓：<br>
+$$\Delta h=\int_{T_1}^{T_2}c_pdT=c_p(T_2-T_1)$$<br>
+熵：<br>
+$$<br>
+ds=\frac{\delta q}{T}|_{可逆}=<br>
+\begin{cases}<br>
+c_p\frac{dT}{T}-R_g\frac{dp}{p}\<br>
+c_V\frac{dT}{T}+R_g\frac{dv}{v}\<br>
+c_V\frac{dp}{p}+c_p\frac{dv}{v}<br>
+\end{cases}<br>
+$$<br>
+$$<br>
+\Rightarrow\ \Delta s=\int ds=<br>
+\begin{cases}<br>
+c_p\ln\frac{T_2}{T_1}-R_g\ln\frac{p_2}{p_1}\<br>
+c_V\ln\frac{T_2}{T_1}+R_g\ln\frac{v_2}{v_1}\<br>
+c_V\ln\frac{p_2}{p_1}+c_p\ln\frac{v_2}{v_1}<br>
+\end{cases}<br>
+$$</p>
+<h2 id="理想气体混合物">理想气体混合物</h2>
+<p>道尔顿分压力定律：混合气体的总压力 $p$ 等于各组成气体分压力 $p_i$ 之和<br>
+$$p=\sum_ip_i$$</p>
+<p>分体积定律：<br>
+$$V=\sum_iV_i$$</p>
+<p>质量分数：组分气体质量与混合气体总质量之比<br>
+$$w_i=\frac{m_i}{m}$$</p>
+<p>摩尔分数：<br>
+$$x_i=\frac{n_i}{n}$$</p>
+<h2 id="理想气体的基本热力过程">理想气体的基本热力过程</h2>
+<h4 id="多变过程">多变过程</h4>
+<p>$$pv^n=常数$$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$n=0$</th>
+<th style="text-align:center">$n=1$</th>
+<th style="text-align:center">$n=\kappa$</th>
+<th style="text-align:center">$n=\infty$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$p=$ 常数</td>
+<td style="text-align:center">$pv=$ 常数</td>
+<td style="text-align:center">$p=v^\kappa$ 常数</td>
+<td style="text-align:center">$v=$ 常数</td>
+</tr>
+<tr>
+<td style="text-align:center">定压过程</td>
+<td style="text-align:center">定温过程</td>
+<td style="text-align:center">定熵（可逆绝热）过程</td>
+<td style="text-align:center">定容过程</td>
+</tr>
+</tbody>
+</table>
+<div align="center"><img src="/2026/06/27/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80/image2.png" width="400" height="170"></div>
+<h4 id="定容、定压、定温过程">定容、定压、定温过程</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">定容过程</th>
+<th style="text-align:center">定压过程</th>
+<th style="text-align:center">定温过程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">过程方程</td>
+<td style="text-align:center">$\frac{p_2}{p_1}=\frac{T_2}{T_1}$</td>
+<td style="text-align:center">$\frac{v_2}{v_1}=\frac{T_2}{T_1}$</td>
+<td style="text-align:center">$p_1v_1=p_2v_2$</td>
+</tr>
+<tr>
+<td style="text-align:center">比热容</td>
+<td style="text-align:center">$c_V=\frac{1}{\gamma-1}R_g$</td>
+<td style="text-align:center">$c_p=\frac{\gamma}{\gamma-1}R_g$</td>
+<td style="text-align:center">$c_T \rightarrow \infty$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\Delta u$</td>
+<td style="text-align:center">$c_v(T_2-T_1)$</td>
+<td style="text-align:center">$c_v(T_2-T_1)$</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">$\Delta h$</td>
+<td style="text-align:center">$c_p(T_2-T_1)$</td>
+<td style="text-align:center">$c_p(T_2-T_1)$</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">$\Delta s$</td>
+<td style="text-align:center">$c_V\ln\frac{T_2}{T_1}$</td>
+<td style="text-align:center">$c_p\ln\frac{T_2}{T_1}$</td>
+<td style="text-align:center">$R_g\ln\frac{v_2}{v_1}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$q$</td>
+<td style="text-align:center">$c_v(T_2-T_1)$</td>
+<td style="text-align:center">$c_p(T_2-T_1)$</td>
+<td style="text-align:center">$R_gT\ln\frac{v_2}{v_1}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$w_t$</td>
+<td style="text-align:center">$=v(p_1-P_2)$</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">$R_gT\ln\frac{v_2}{v_1}$</td>
 </tr>
 </tbody>
 </table>
